@@ -1,0 +1,19 @@
+{
+  "name": "pulse-grid-deck",
+  "version": "1.0.0",
+  "description": "Pulse Grid Hospital OS Pitch Deck",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve .",
+    "dev": "npx -y serve .",
+    "build": "echo 'Static site ready for deployment'"
+  },
+  "keywords": [
+    "pitch-deck",
+    "pulse-grid",
+    "presentation",
+    "hospital-os"
+  ],
+  "author": "Pulse Grid",
+  "license": "MIT"
+}

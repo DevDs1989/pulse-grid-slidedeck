@@ -1,6 +1,6 @@
 /**
- * Pulse Grid — Bento Slide Deck Engine
- * Clean. No ambient glow. No slop.
+ * Pulse Grid — Neo-Brutalist Presentation Engine
+ * Dark Mode, Audio FX, Speaker Notes, Overview & Touch Navigation
  */
 (() => {
   'use strict';
@@ -16,12 +16,68 @@
   const progFill = $('#topProgressBar');
   const titleEl = $('#currentSlideTitle');
 
+  // Controls & Modals
+  const prevBtn = $('#prevBtn');
+  const nextBtn = $('#nextBtn');
+  const overviewBtn = $('#overviewBtn');
+  const closeOverviewBtn = $('#closeOverviewBtn');
+  const overviewModal = $('#overviewModal');
+  const overviewGrid = $('#overviewGrid');
+  const fullscreenBtn = $('#fullscreenBtn');
+  const notesBtn = $('#notesBtn');
+  const notesDrawer = $('#notesDrawer');
+  const closeNotesBtn = $('#closeNotesBtn');
+  const notesBody = $('#notesBody');
+  const helpBtn = $('#helpBtn');
+  const helpModal = $('#helpModal');
+  const closeHelpBtn = $('#closeHelpBtn');
+  const soundBtn = $('#soundBtn');
+  const slideCounterBtn = $('#slideCounterBtn');
+
   let current = 0;
   let overviewOpen = false;
+  let notesOpen = false;
+  let helpOpen = false;
+  let soundEnabled = true;
 
   totNum.textContent = total;
 
-  /* ─── Canvas scale ─── */
+  /* ─── Web Audio API Sound Synthesizer ─── */
+  let audioCtx = null;
+  function playSlideSound() {
+    if (!soundEnabled) return;
+    try {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.04);
+      
+      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
+      
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.04);
+    } catch (e) {}
+  }
+
+  function toggleSound() {
+    soundEnabled = !soundEnabled;
+    soundBtn.classList.toggle('active-toggle', soundEnabled);
+    soundBtn.style.opacity = soundEnabled ? '1' : '0.4';
+  }
+
+  /* ─── Canvas Scale for 16:9 Responsive ─── */
   function scaleCanvas() {
     const W = 1440, H = 810;
     const vw = window.innerWidth;
@@ -33,9 +89,11 @@
   scaleCanvas();
 
   /* ─── Navigation ─── */
-  function go(idx) {
+  function go(idx, playSound = true) {
     idx = Math.max(0, Math.min(total - 1, idx));
     if (idx === current && slides[idx].classList.contains('active')) return;
+
+    if (playSound) playSlideSound();
 
     slides.forEach((s, i) => {
       s.classList.remove('active', 'prev');
@@ -46,7 +104,11 @@
 
     curNum.textContent = idx + 1;
     progFill.style.width = `${((idx + 1) / total) * 100}%`;
-    titleEl.textContent = slides[idx].dataset.title || '';
+    titleEl.textContent = slides[idx].dataset.title || `Slide ${idx + 1}`;
+
+    // Update speaker notes
+    const note = slides[idx].dataset.notes || 'No presenter notes for this slide.';
+    notesBody.textContent = note;
 
     triggerAnimations(slides[idx]);
     updateOverviewHighlight();
@@ -55,14 +117,13 @@
   function next() { go(current + 1); }
   function prev() { go(current - 1); }
 
-  /* ─── Animations ─── */
+  /* ─── Dynamic Number Counting Animations ─── */
   function triggerAnimations(slide) {
-    // Counter-up numbers
     slide.querySelectorAll('.counter-up').forEach(el => {
       const target = parseInt(el.dataset.target, 10);
       if (isNaN(target)) return;
       let v = 0;
-      const step = Math.max(1, target / 35);
+      const step = Math.max(1, target / 30);
       const tick = () => {
         v += step;
         if (v >= target) { el.textContent = target; return; }
@@ -72,27 +133,14 @@
       requestAnimationFrame(tick);
     });
 
-    // Bar chart pillars
-    slide.querySelectorAll('.chart-bar-pillar').forEach(bar => {
-      const h = bar.dataset.height;
-      if (h) {
-        bar.style.height = '0%';
-        requestAnimationFrame(() => { bar.style.height = h; });
-      }
-    });
-
-    // Horizontal bar fills
-    slide.querySelectorAll('.h-bar-fill').forEach(fill => {
-      const w = fill.style.width;
+    slide.querySelectorAll('.alloc-bar-fill, .h-bar-fill').forEach(fill => {
+      const w = fill.dataset.width || fill.style.width;
       fill.style.width = '0%';
       requestAnimationFrame(() => { fill.style.width = w; });
     });
   }
 
-  /* ─── Overview ─── */
-  const overviewModal = $('#overviewModal');
-  const overviewGrid  = $('#overviewGrid');
-
+  /* ─── Overview Grid Modal ─── */
   function buildOverview() {
     overviewGrid.innerHTML = '';
     slides.forEach((s, i) => {
@@ -123,6 +171,23 @@
     });
   }
 
+  /* ─── Speaker Notes ─── */
+  function toggleNotes() {
+    notesOpen = !notesOpen;
+    notesDrawer.classList.toggle('active', notesOpen);
+    notesBtn.classList.toggle('active-toggle', notesOpen);
+    if (notesOpen) {
+      notesBody.textContent = slides[current].dataset.notes || 'No presenter notes.';
+    }
+  }
+
+  /* ─── Keyboard Help Modal ─── */
+  function toggleHelp() {
+    helpOpen = !helpOpen;
+    helpModal.classList.toggle('active', helpOpen);
+    helpBtn.classList.toggle('active-toggle', helpOpen);
+  }
+
   /* ─── Fullscreen ─── */
   function toggleFS() {
     if (!document.fullscreenElement) {
@@ -132,10 +197,34 @@
     }
   }
 
-  /* ─── Keyboard ─── */
+  /* ─── Event Listeners ─── */
+  prevBtn?.addEventListener('click', prev);
+  nextBtn?.addEventListener('click', next);
+  overviewBtn?.addEventListener('click', openOverview);
+  closeOverviewBtn?.addEventListener('click', closeOverview);
+  fullscreenBtn?.addEventListener('click', toggleFS);
+  notesBtn?.addEventListener('click', toggleNotes);
+  closeNotesBtn?.addEventListener('click', () => { notesOpen = false; notesDrawer.classList.remove('active'); notesBtn.classList.remove('active-toggle'); });
+  helpBtn?.addEventListener('click', toggleHelp);
+  closeHelpBtn?.addEventListener('click', () => { helpOpen = false; helpModal.classList.remove('active'); helpBtn.classList.remove('active-toggle'); });
+  soundBtn?.addEventListener('click', toggleSound);
+  slideCounterBtn?.addEventListener('click', openOverview);
+
+  // Top right slide numbers click -> open overview
+  $$('.slide-top-right-num').forEach((el, idx) => {
+    el.addEventListener('click', openOverview);
+  });
+
+  /* ─── Keyboard Navigation ─── */
   document.addEventListener('keydown', e => {
+    if (helpOpen) {
+      if (e.key === 'Escape' || e.key === '?' || e.key === 'h' || e.key === 'H') toggleHelp();
+      return;
+    }
     if (overviewOpen) {
-      if (e.key === 'Escape') closeOverview();
+      if (e.key === 'Escape' || e.key === 'o' || e.key === 'O' || e.key === 'g' || e.key === 'G') closeOverview();
+      if (e.key === 'ArrowRight') go(current + 1);
+      if (e.key === 'ArrowLeft') go(current - 1);
       return;
     }
     switch (e.key) {
@@ -148,58 +237,48 @@
       case 'f': case 'F': e.preventDefault(); toggleFS(); break;
       case 'o': case 'O': case 'g': case 'G':
         e.preventDefault(); openOverview(); break;
-      case 'Escape': break;
+      case 'n': case 'N':
+        e.preventDefault(); toggleNotes(); break;
+      case 'm': case 'M':
+        e.preventDefault(); toggleSound(); break;
+      case '?': case 'h': case 'H':
+        e.preventDefault(); toggleHelp(); break;
+      case 'Escape':
+        if (notesOpen) toggleNotes();
+        break;
     }
   });
 
-  /* ─── Buttons ─── */
-  $('#prevBtn').addEventListener('click', prev);
-  $('#nextBtn').addEventListener('click', next);
-  $('#overviewBtn').addEventListener('click', openOverview);
-  $('#closeOverviewBtn').addEventListener('click', closeOverview);
-  $('#fullscreenBtn').addEventListener('click', toggleFS);
-
-  /* ─── Touch ─── */
-  let tx = 0;
+  /* ─── Touch Swipe Navigation ─── */
+  let touchStartX = 0;
+  let touchStartY = 0;
   document.addEventListener('touchstart', e => {
-    tx = e.changedTouches[0].screenX;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
   }, { passive: true });
-  document.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].screenX - tx;
-    if (dx < -50) next();
-    if (dx > 50) prev();
-  }, { passive: true });
-  /* ─── Interactivity ─── */
-  const cards = $$('.arch-card');
-  cards.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -2.5;
-      const rotateY = ((x - centerX) / centerX) * 2.5;
-      
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
-    });
-    
-    card.addEventListener('mouseenter', () => {
-      card.classList.add('is-hovered');
-      card.style.transition = 'transform 0.1s ease-out';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      card.classList.remove('is-hovered');
-      card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    });
-  });
 
-  /* ─── Init ─── */
-  go(0);
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      if (dx < 0) next();
+      else prev();
+    }
+  }, { passive: true });
+
+  /* ─── Mouse Wheel Navigation (Debounced) ─── */
+  let lastWheelTime = 0;
+  window.addEventListener('wheel', e => {
+    if (overviewOpen || helpOpen) return;
+    const now = Date.now();
+    if (now - lastWheelTime < 600) return;
+    if (Math.abs(e.deltaY) > 30) {
+      lastWheelTime = now;
+      if (e.deltaY > 0) next();
+      else prev();
+    }
+  }, { passive: true });
+
+  // Initialize
+  go(0, false);
 })();
