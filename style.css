@@ -21,12 +21,8 @@
   --line-dark: #ffffff;
 
   --royal-blue: #3B82F6;
-  --royal-blue-glow: rgba(59, 130, 246, 0.35);
-  --royal-blue-dim: rgba(59, 130, 246, 0.15);
-  --accent: #3B82F6;
-  --accent-glow: rgba(59, 130, 246, 0.35);
-  --accent-dim: rgba(59, 130, 246, 0.15);
-  
+      --accent: #3B82F6;
+      
   
   --royal-blue: #4169E1;
   --pastel-blue: #9eb3c8;
@@ -116,8 +112,7 @@ body {
   background-color: var(--royal-blue);
   width: 0%;
   transition: width 0.35s var(--ease);
-  box-shadow: 0 0 10px var(--royal-blue-glow);
-}
+  }
 
 /* Slide Base Structure */
 .slide {
@@ -255,8 +250,7 @@ h1, h2, h3, h4, .heading-font {
 
 .organic-card.brand:hover {
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.25);
-}
+  }
 
 .organic-card.brand * {
   color: #ffffff !important;
@@ -532,8 +526,7 @@ h1, h2, h3, h4, .heading-font {
 
 .overview-thumbnail.is-active {
   border: 2px solid var(--royal-blue);
-  box-shadow: 0 0 20px var(--royal-blue-dim);
-}
+  }
 
 .thumb-index {
   font-family: var(--mono);
@@ -667,8 +660,7 @@ h1, h2, h3, h4, .heading-font {
 
 .stat-hero-val.accent {
   color: var(--royal-blue);
-  text-shadow: 0 0 20px var(--royal-blue-glow);
-}
+  }
 
 .stat-sub-lbl {
   font-family: var(--mono);
@@ -759,11 +751,14 @@ h1, h2, h3, h4, .heading-font {
   border: none;
   cursor: pointer;
   transition: all 0.2s var(--ease);
-  box-shadow: 0 4px 20px var(--royal-blue-glow);
 }
 
 .cta-btn-link:hover {
   background: #2563eb;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px var(--royal-blue-glow);
 }
+
+.cta-btn-link:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  }
