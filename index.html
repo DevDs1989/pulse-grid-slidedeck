@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Grid — Hospital Management, Supercharged with AI</title>
+  <meta name="description" content="AI-powered hospital management platform. 22 paying hospitals, ₹15.84L ARR, zero free pilots.">
+
+  <!-- Mozilla Fonts + Fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Zilla+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="deck-app">
+
+    <!-- Top Progress Line -->
+    <div class="progress-track-top">
+      <div class="progress-fill-top" id="topProgressBar"></div>
+    </div>
+
+    <!-- Presentation Stage -->
+    <div class="stage-wrapper" id="stageWrapper">
+      <div class="slide-canvas" id="slideCanvas">
+        <div class="slides-viewport">
+
+          <!-- =================================================================
+               SLIDE 1 · COVER
+               ================================================================= -->
+          <section class="slide active theme-hero" data-slide="1" data-title="01 Cover">
+            <div class="editorial-top-bar" style="border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6);">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px; filter: brightness(0) invert(1);"></div>
+              <div class="editorial-top-center">Hospital OS · 2024</div>
+              <div class="editorial-top-right">01 / 18</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%; flex-grow: 1;" class="anim d1">
+              
+              <img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 48px; width: auto; margin-bottom: 32px; filter: brightness(0) invert(1);">
+
+              <h1 style="font-size: 82px; font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; color: #ffffff; max-width: 900px; margin-bottom: 24px;">
+                Hospital management,<br>supercharged with AI.
+              </h1>
+              
+              <p style="font-size: 22px; color: rgba(255,255,255,0.7); max-width: 600px; line-height: 1.5;">
+                An integrated platform replacing fragmented paper and legacy software with an active clinical intelligence engine.
+              </p>
+
+              <div style="display: flex; gap: 40px; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px;" class="anim d2">
+                <div style="text-align: left;">
+                  <div style="font-size: 32px; font-weight: 800; color: #fff;">22</div>
+                  <div style="font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 4px; letter-spacing: 0.05em;">Paying Hospitals</div>
+                </div>
+                <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.1);"></div>
+                <div style="text-align: left;">
+                  <div style="font-size: 32px; font-weight: 800; color: #fff;">₹15.84L</div>
+                  <div style="font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 4px; letter-spacing: 0.05em;">Annual ARR</div>
+                </div>
+                <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.1);"></div>
+                <div style="text-align: left;">
+                  <div style="font-size: 32px; font-weight: 800; color: #fff;">₹0</div>
+                  <div style="font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 4px; letter-spacing: 0.05em;">Free Pilots</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar" style="border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4);">
+              <div>Pulse Grid Pitch Deck</div>
+              <div>01 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 2 · HOW IT STARTED (Origin & Problem)
+               ================================================================= -->
+          <section class="slide" data-slide="2" data-title="02 Origins">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Origins & Problem · 2024</div>
+              <div class="editorial-top-right">02 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">02</div>
+                <div>
+                  <h2 class="section-main-title">Hospital software must shift to AI. Current systems are lackluster.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Why 30,000 mid-sized hospitals run on fragmented paper, Excel, and legacy desktop software.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Problem Analysis</div>
+            </div>
+
+            <div class="grid-2 anim d2">
+              <!-- Left: The Operator Insight -->
+              <div class="arch-card dark-hero" style="justify-content: space-between; padding: 24px;">
+                <div>
+                  <div class="card-kicker" style="color: rgba(255,255,255,0.6);">ORIGIN STORY · FIRSTHAND OPERATOR NEED</div>
+                  <p style="font-size: 25.2px; font-weight: 600; line-height: 1.5; color: #ffffff; margin-top: 8px;">
+                    "The need stems directly from firsthand hospital operations. Legacy software acts as a static digital filing cabinet that slows doctors down instead of an intelligent engine that actively accelerates hospital cash flow."
+                  </p>
+                </div>
+                <div style="padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.2); font-family: var(--mono); font-size: 14.7px; color: rgba(255,255,255,0.7); text-transform: uppercase;">
+                  Built for hospital owners, doctors, and desk staff
+                </div>
+              </div>
+
+              <!-- Right: 3 Failure Modes + The Cost -->
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div class="arch-card bg-tint" style="padding: 12px 16px;">
+                  <div class="card-kicker">FAILURE 01 · DEAD ARCHIVES</div>
+                  <div class="card-heading" style="font-size: 21.0px; margin-bottom: 2px;">Stores data, never uses it</div>
+                  <p class="card-text" style="font-size: 16.8px;">Gigabytes of clinical histories sit isolated in dead SQL tables. Zero proactive care recall, zero automated diagnostic context.</p>
+                </div>
+
+                <div class="arch-card bg-tint" style="padding: 12px 16px;">
+                  <div class="card-kicker">FAILURE 02 · CLERICAL WASTE</div>
+                  <div class="card-heading" style="font-size: 21.0px; margin-bottom: 2px;">Zero automation across desks</div>
+                  <p class="card-text" style="font-size: 16.8px;">Staff manually re-enter identical patient details 4 times across reception, lab, ward registers, and billing counters.</p>
+                </div>
+
+                <div class="arch-card bg-tint" style="padding: 12px 16px;">
+                  <div class="card-kicker">FAILURE 03 · BLIND LEADERSHIP</div>
+                  <div class="card-heading" style="font-size: 21.0px; margin-bottom: 2px;">Zero emphasis on insights</div>
+                  <p class="card-text" style="font-size: 16.8px;">Leadership runs blind. Unbilled procedures, bed occupancy bottlenecks, and pharmacy leakages surface only after month-end.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Origins & Problem Statement</div>
+              <div>02 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 3 · TIMELINE (May - June - July)
+               ================================================================= -->
+          <section class="slide" data-slide="3" data-title="03 Velocity">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Execution Track Record · 2024</div>
+              <div class="editorial-top-right">03 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">03</div>
+                <div>
+                  <h2 class="section-main-title">From prototype to 22 hospitals in ninety days.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Demonstrated rapid product-market velocity with zero capital raised.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">90-Day Sprint</div>
+            </div>
+
+            <div class="grid-3 anim d2" style="margin-bottom: 10px;">
+              <!-- May -->
+              <div class="arch-card border-top-thick" style="justify-content: space-between;">
+                <div>
+                  <div class="card-kicker">MONTH 01 · MAY 2024</div>
+                  <div class="card-heading" style="font-size: 28.0px;">Designed MVP</div>
+                  <p class="card-text" style="margin-top: 8px;">
+                    Designed unified hospital data architecture from scratch. Engineered core registration, OPD, IPD, lab, pharmacy, and billing engine in 4 weeks.
+                  </p>
+                </div>
+                <div style="padding-top: 14px; border-top: 1px solid var(--line-hairline); margin-top: 14px;">
+                  <div class="stat-hero-num" style="font-size: 42.0px;">v1.0</div>
+                  <div class="stat-hero-label">Core Engine Shipped</div>
+                </div>
+              </div>
+
+              <!-- June -->
+              <div class="arch-card border-top-thick" style="justify-content: space-between;">
+                <div>
+                  <div class="card-kicker">MONTH 02 · JUNE 2024</div>
+                  <div class="card-heading" style="font-size: 28.0px;">2 Pilot Deployments</div>
+                  <p class="card-text" style="margin-top: 8px;">
+                    Deployed on the ground to 2 initial facilities. Shadowed doctors and billing staff on real shifts, iterating daily on live user feedback.
+                  </p>
+                </div>
+                <div style="padding-top: 14px; border-top: 1px solid var(--line-hairline); margin-top: 14px;">
+                  <div class="stat-hero-num" style="font-size: 42.0px;">2</div>
+                  <div class="stat-hero-label">Hospitals Tested</div>
+                </div>
+              </div>
+
+              <!-- July -->
+              <div class="arch-card dark-hero" style="justify-content: space-between;">
+                <div>
+                  <div class="card-kicker" style="color: rgba(255,255,255,0.6);">MONTH 03 · JULY 2024</div>
+                  <div class="card-heading" style="font-size: 28.0px; color:#fff;">Scaled 2 to 22</div>
+                  <p class="card-text" style="margin-top: 8px; color: rgba(255,255,255,0.85);">
+                    Expanded to 22 paying hospitals purely through viral owner-to-owner referrals. 100% paid conversions with zero free trials.
+                  </p>
+                </div>
+                <div style="padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 14px;">
+                  <div class="stat-hero-num" style="font-size: 42.0px; color:#fff;">22</div>
+                  <div class="stat-hero-label" style="color: rgba(255,255,255,0.7);">Paying Accounts</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Execution Metrics Bar -->
+            <div class="grid-4 anim d3" style="flex-grow: 0;">
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">SPEED TO GO-LIVE</div><strong style="font-size: 21.0px;">4–6 Weeks</strong></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">PAID RETENTION</div><strong style="font-size: 21.0px;">100% (22/22)</strong></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">CUSTOMER CAC</div><strong style="font-size: 21.0px;">&lt;₹8,000 (Referral)</strong></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">GROSS MARGIN</div><strong style="font-size: 21.0px;">84% (Cloud SaaS)</strong></div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Execution Velocity & Speed</div>
+              <div>03 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 4 · PRODUCT / 8 MODULES
+               ================================================================= -->
+          <section class="slide" data-slide="4" data-title="04 Architecture">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Unified Platform · 2024</div>
+              <div class="editorial-top-right">04 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">04</div>
+                <div>
+                  <h2 class="section-main-title">One system, eight modules, no islands.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">An integrated data layer replacing disparate siloed point solutions.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Platform Architecture</div>
+            </div>
+
+            <!-- 8 Modules Grid -->
+            <div class="grid-4 anim d2" style="margin-bottom: 10px;">
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">01</div><strong style="font-size: 18.2px;"> Registration</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">Instant ABHA token sync</div></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">02</div><strong style="font-size: 18.2px;"> Appointments / OPD</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">Smart slot queue management</div></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">03</div><strong style="font-size: 18.2px;"> Billing & Discharge</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">1.4s auto-assembled invoices</div></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">04</div><strong style="font-size: 18.2px;"> Pharmacy Inventory</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">Auto buffer replenishment</div></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">05</div><strong style="font-size: 18.2px;"> Laboratory & Diagnostics</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">Direct machine result ingestion</div></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">06</div><strong style="font-size: 18.2px;"> In-Patient (IPD)</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">Real-time bed occupancy grid</div></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">07</div><strong style="font-size: 18.2px;"> Reports & Financials</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">Executive P&L audits</div></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">08</div><strong style="font-size: 18.2px;"> WhatsApp Delivery</strong><div style="font-size: 15.4px; color: var(--ink-secondary); margin-top: 2px;">Direct patient PDF dispatches</div></div>
+            </div>
+
+            <!-- 4 Benchmark Quadrants -->
+            <div class="grid-4 anim d3">
+              <div class="arch-card dark-hero">
+                <div class="stat-hero-num" style="color:#fff; font-size: 47.6px;">1.4s</div>
+                <div class="stat-hero-label" style="color: rgba(255,255,255,0.7);">Discharge Assembly</div>
+                <div class="stat-hero-sub" style="color: rgba(255,255,255,0.75);">Assembles all pharmacy & lab fees</div>
+              </div>
+              <div class="arch-card border-top-thick">
+                <div class="stat-hero-num" style="font-size: 47.6px;">3s</div>
+                <div class="stat-hero-label">Medical Certificate</div>
+                <div class="stat-hero-sub">AI draft from physician records</div>
+              </div>
+              <div class="arch-card border-top-thick">
+                <div class="stat-hero-num" style="font-size: 47.6px;">4–6 wks</div>
+                <div class="stat-hero-label">Kickoff to Live</div>
+                <div class="stat-hero-sub">Rapid on-site staff configuration</div>
+              </div>
+              <div class="arch-card border-top-thick">
+                <div class="stat-hero-num" style="font-size: 47.6px;">AES-256</div>
+                <div class="stat-hero-label">Encryption & DPDP</div>
+                <div class="stat-hero-sub">Role-based granular clinical access</div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Platform Architecture</div>
+              <div>04 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 5 · CLOSED-LOOP WORKFLOW
+               ================================================================= -->
+          <section class="slide" data-slide="5" data-title="05 Workflow">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Data Lifecycle · 2024</div>
+              <div class="editorial-top-right">05 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">05</div>
+                <div>
+                  <h2 class="section-main-title">The loop that closes the revenue leak.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">End-to-end automated clinical event stream preventing unbilled procedures.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Data Engine</div>
+            </div>
+
+            <div class="grid-4 anim d2" style="margin-bottom: 10px;">
+              <div class="arch-card flow-step-box border-top-thick">
+                <div>
+                  <div class="card-kicker">STEP 01</div>
+                  <div class="card-heading">Register</div>
+                  <p class="card-text">Patient captured once at reception. Details propagate across OPD, lab, pharmacy, and IPD beds.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); margin-top: 10px;">INPUT: ABHA ID / PHONE</div>
+              </div>
+
+              <div class="arch-card flow-step-box border-top-thick">
+                <div>
+                  <div class="card-kicker">STEP 02</div>
+                  <div class="card-heading">Treat</div>
+                  <p class="card-text">Doctors record treatment; procedure, consumable, and lab charges accrue automatically in the ledger.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); margin-top: 10px;">INPUT: CLINICAL Rx / ORDERS</div>
+              </div>
+
+              <div class="arch-card flow-step-box dark-hero">
+                <div>
+                  <div class="card-kicker" style="color: rgba(255,255,255,0.6);">STEP 03</div>
+                  <div class="card-heading" style="color:#fff;">Auto-bill</div>
+                  <p class="card-text" style="color: rgba(255,255,255,0.85);">Discharge statement assembled with itemized audit in 1.4 seconds. Zero missed charges.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: rgba(255,255,255,0.6); margin-top: 10px;">ENGINE: 1.4s ASSEMBLE</div>
+              </div>
+
+              <div class="arch-card flow-step-box border-top-thick">
+                <div>
+                  <div class="card-kicker">STEP 04</div>
+                  <div class="card-heading">Deliver</div>
+                  <p class="card-text">Detailed invoices, prescription summaries, and test reports sent directly to patient's WhatsApp.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); margin-top: 10px;">DISPATCH: WHATSAPP CLOUD</div>
+              </div>
+            </div>
+
+            <!-- ROI Impact Callout -->
+            <div class="arch-card bg-tint anim d3" style="padding: 12px 18px; flex-grow: 0; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="font-size: 18.2px;">Economic ROI Impact:</strong>
+                <span style="font-size: 17.5px; color: var(--ink-secondary); margin-left: 8px;">A 60-bed hospital recovers an estimated ₹48,000/month in previously unbilled pharmacy consumables and procedure items.</span>
+              </div>
+              <div style="font-family: var(--mono); font-size: 15.4px; font-weight: 700; color: var(--ink-pure);">+₹5.76L ANNUAL REVENUE RECOVERY</div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Closed-Loop Workflow</div>
+              <div>05 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 6 · COMPETITIVE MOAT
+               ================================================================= -->
+          <section class="slide" data-slide="6" data-title="06 Moat">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Defensibility & Moat · 2024</div>
+              <div class="editorial-top-right">06 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">06</div>
+                <div>
+                  <h2 class="section-main-title">Three things a generic HMS cannot copy.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Architectural barriers that defend Pulse Grid against incumbents.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Defensible Moat</div>
+            </div>
+
+            <div class="grid-3 anim d2">
+              <div class="arch-card border-top-thick" style="padding: 24px;">
+                <div class="card-kicker">PILLAR 01 · ZERO FRICTION</div>
+                <div class="card-heading" style="font-size: 30.8px;">Configured, Not Installed</div>
+                <p class="card-text" style="font-size: 18.2px; margin-top: 10px;">
+                  Each hospital's exact clinical and billing workflow is tailored to match how doctors and desk staff already operate — eliminating costly resistance and training delays.
+                </p>
+                <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line-hairline); font-family: var(--mono); font-size: 14.7px; color: var(--ink-muted);">
+                  BARRIER: 4-WEEK TAILORED WORKFLOW
+                </div>
+              </div>
+
+              <div class="arch-card dark-hero" style="padding: 24px;">
+                <div class="card-kicker" style="color: rgba(255,255,255,0.6);">PILLAR 02 · ACTIVE INTELLIGENCE</div>
+                <div class="card-heading" style="font-size: 30.8px; color:#fff;">AI Co-pilot, Not Dashboard</div>
+                <p class="card-text" style="font-size: 18.2px; margin-top: 10px; color: rgba(255,255,255,0.85);">
+                  An active clinical assistant that surfaces unbilled discharge items, flags bed bottlenecks, and drafts certificates in 3s before mistakes occur.
+                </p>
+                <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.2); font-family: var(--mono); font-size: 14.7px; color: rgba(255,255,255,0.6);">
+                  BARRIER: REAL-TIME AUDIT MODELS
+                </div>
+              </div>
+
+              <div class="arch-card border-top-thick" style="padding: 24px;">
+                <div class="card-kicker">PILLAR 03 · NATIVE DISTRIBUTION</div>
+                <div class="card-heading" style="font-size: 30.8px;">WhatsApp-Native Architecture</div>
+                <p class="card-text" style="font-size: 18.2px; margin-top: 10px;">
+                  WhatsApp is engineered into the core data layer. Invoices, test reports, and appointment reminders are delivered instantly without third-party plugins.
+                </p>
+                <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line-hairline); font-family: var(--mono); font-size: 14.7px; color: var(--ink-muted);">
+                  BARRIER: ZERO-APP PATIENT ADOPTION
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Competitive Moat</div>
+              <div>06 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 7 · CLINICAL AI
+               ================================================================= -->
+          <section class="slide" data-slide="7" data-title="07 Clinical AI">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Clinical Automation · 2024</div>
+              <div class="editorial-top-right">07 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">07</div>
+                <div>
+                  <h2 class="section-main-title">The hospital's numbers, in plain English.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Practical, high-utility automation built for daily clinical routines.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Practical AI</div>
+            </div>
+
+            <div class="grid-split-60-40 anim d2">
+              <!-- Left: The 8 AM Brief -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">OPERATIONAL INTELLIGENCE · STAFF REVIEWED</div>
+                <div class="card-heading" style="font-size: 25.2px;">The 8 a.m. brief</div>
+                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+                  <div class="checklist-item">
+                    <span class="dot"></span>
+                    <span><strong>Ward 2 at 92% occupancy</strong> — above recommended nurse-to-patient staffing threshold.</span>
+                  </div>
+                  <div class="checklist-item">
+                    <span class="dot"></span>
+                    <span><strong>₹48,000 in discharges from yesterday</strong> pending final billing settlement audit.</span>
+                  </div>
+                  <div class="checklist-item">
+                    <span class="dot"></span>
+                    <span><strong>3 emergency pharmacy consumables</strong> have dropped below minimum reorder buffer.</span>
+                  </div>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); margin-top: auto; padding-top: 8px;">
+                  DELIVERED AUTOMATICALLY TO HOSPITAL MD & NURSING SUPERINTENDENT DAILY
+                </div>
+              </div>
+
+              <!-- Right: Instant Documentation -->
+              <div class="arch-card dark-hero" style="justify-content: space-between;">
+                <div>
+                  <div class="card-kicker" style="color: rgba(255,255,255,0.6);">INSTANT DRAFTING</div>
+                  <div class="card-heading" style="color:#fff; font-size: 25.2px;">Documents, automated</div>
+                  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; padding: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); margin-top: 8px;">
+                    <div style="text-align: center;">
+                      <div style="font-size: 50.4px; font-weight: 800; color: #ffffff; line-height: 1;">3s</div>
+                      <div style="font-family: var(--mono); font-size: 13.3px; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-top: 4px;">Pulse Grid AI</div>
+                    </div>
+                    <div style="font-size: 19.6px; color: rgba(255,255,255,0.3);">vs</div>
+                    <div style="text-align: center;">
+                      <div style="font-size: 50.4px; font-weight: 800; color: rgba(255,255,255,0.4); text-decoration: line-through; line-height: 1;">~15m</div>
+                      <div style="font-family: var(--mono); font-size: 13.3px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 4px;">By Hand</div>
+                    </div>
+                  </div>
+                </div>
+                <p style="font-size: 16.1px; color: rgba(255,255,255,0.75); line-height: 1.45; margin-top: 8px;">
+                  Medical certificates & discharge summaries drafted in 3s — signed by doctor before dispatch.
+                </p>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Clinical AI & Automation</div>
+              <div>07 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 8 · OPERATIONAL IMPACT (BENTO 6-GRID)
+               ================================================================= -->
+          <section class="slide" data-slide="8" data-title="08 Impact">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Key Information & Metrics · 2024</div>
+              <div class="editorial-top-right">08 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">08</div>
+                <div>
+                  <h2 class="section-main-title">Real volume flowing through Pulse Grid daily.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Live operational throughput across 22 production hospitals.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Operational Volume</div>
+            </div>
+
+            <div class="grid-3 anim d2" style="grid-template-rows: repeat(2, 1fr);">
+              <!-- 1. Hospitals Served -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">DEPLOYED NETWORK</div>
+                <div class="stat-hero-num counter-up" data-target="22">0</div>
+                <div class="stat-hero-label">Hospitals Served</div>
+                <div class="stat-hero-sub">100% active paying healthcare facilities</div>
+              </div>
+
+              <!-- 2. Patients Served -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">PATIENT RECORDS</div>
+                <div class="stat-hero-num">52,000+</div>
+                <div class="stat-hero-label">Patients Served</div>
+                <div class="stat-hero-sub">Diagnosed, billed & managed end-to-end</div>
+              </div>
+
+              <!-- 3. Active Users Served -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">DAILY FLOOR USAGE</div>
+                <div class="stat-hero-num counter-up" data-target="180">0</div>
+                <div class="stat-hero-label">Active Daily Users</div>
+                <div class="stat-hero-sub">Doctors, nurses, pharmacy & billing staff</div>
+              </div>
+
+              <!-- 4. Bills Generated -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">TRANSACTION VOLUME</div>
+                <div class="stat-hero-num">44,000+</div>
+                <div class="stat-hero-label">Bills Generated</div>
+                <div class="stat-hero-sub">OPD invoices & IPD discharge statements</div>
+              </div>
+
+              <!-- 5. Revenue Made -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">BOOTSTRAPPED CASH</div>
+                <div class="stat-hero-num">₹9.6L+</div>
+                <div class="stat-hero-label">Revenue Collected</div>
+                <div class="stat-hero-sub">Earned cash collections to date</div>
+              </div>
+
+              <!-- 6. MRR -->
+              <div class="arch-card dark-hero">
+                <div class="card-kicker" style="color: rgba(255,255,255,0.6);">RECURRING SaaS</div>
+                <div class="stat-hero-num" style="color: #fff;">₹1,32,000</div>
+                <div class="stat-hero-label" style="color: rgba(255,255,255,0.7);">Current MRR</div>
+                <div class="stat-hero-sub" style="color: rgba(255,255,255,0.8);">₹15.84L ARR run rate · Zero free pilots</div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Operational Metrics</div>
+              <div>08 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 9 · TRACTION (22 Hospitals Live)
+               ================================================================= -->
+          <section class="slide" data-slide="9" data-title="09 Traction">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Commercial Proof · 2024</div>
+              <div class="editorial-top-right">09 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">09</div>
+                <div>
+                  <h2 class="section-main-title">22 hospitals live. All 22 pay. Zero free pilots.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Real paying customer roster across private hospitals in North India.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Customer Roster</div>
+            </div>
+
+            <!-- 4 Main Counters -->
+            <div class="grid-4 anim d2" style="margin-bottom: 10px; flex-grow: 0;">
+              <div class="arch-card dark-hero" style="padding: 14px 18px;"><div class="stat-hero-num counter-up" data-target="22" style="color:#fff; font-size: 44.8px;">0</div><div class="stat-hero-label" style="color:rgba(255,255,255,0.7);">Paying Hospitals</div></div>
+              <div class="arch-card border-top-thick" style="padding: 14px 18px;"><div class="stat-hero-num" style="font-size: 44.8px;">₹1,32,000</div><div class="stat-hero-label">Monthly MRR</div></div>
+              <div class="arch-card border-top-thick" style="padding: 14px 18px;"><div class="stat-hero-num" style="font-size: 44.8px;">₹15.84L</div><div class="stat-hero-label">Annual ARR</div></div>
+              <div class="arch-card border-top-thick" style="padding: 14px 18px;"><div class="stat-hero-num" style="font-size: 44.8px;">₹6,000</div><div class="stat-hero-label">Blended ARPA</div></div>
+            </div>
+
+            <!-- Paying Hospitals Logo Matrix -->
+            <div class="arch-card anim d3">
+              <div class="card-kicker">DEPLOYED PARTNER SAMPLE (22 ACTIVE HOSPITALS)</div>
+              <div class="partner-logo-grid" style="margin-top: 6px;">
+                <div class="partner-chip">Tyagi Hospital <span class="beds">60 Beds</span></div>
+                <div class="partner-chip">Sunrise Hospital <span class="beds">45 Beds</span></div>
+                <div class="partner-chip">Dua Healthcare <span class="beds">50 Beds</span></div>
+                <div class="partner-chip">Medicare Center <span class="beds">80 Beds</span></div>
+                <div class="partner-chip">Nanda Hospital <span class="beds">35 Beds</span></div>
+                <div class="partner-chip">Jeevan Jyoti <span class="beds">55 Beds</span></div>
+                <div class="partner-chip">Sai Prakash Care <span class="beds">70 Beds</span></div>
+                <div class="partner-chip">SGHMS Facility <span class="beds">65 Beds</span></div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Commercial Proof & Traction</div>
+              <div>09 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 10 · REVENUE BREAKDOWN
+               ================================================================= -->
+          <section class="slide" data-slide="10" data-title="10 Economics">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Unit Economics · 2024</div>
+              <div class="editorial-top-right">10 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">10</div>
+                <div>
+                  <h2 class="section-main-title">Where the ₹1,32,000 a month comes from.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Detailed account-level revenue distribution and price expansion lever.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Unit Economics</div>
+            </div>
+
+            <div class="grid-2 anim d2" style="margin-bottom: 10px;">
+              <!-- Left: Animated Bars -->
+              <div class="arch-card border-top-thick" style="padding: 18px 20px;">
+                <div class="card-kicker">REVENUE SHARE BY PLAN</div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>₹6,000 Tier · 15 Hospitals</span><span>₹90,000 (68%)</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 68%;"></div></div></div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>₹8,000 Tier · 4 Hospitals</span><span>₹32,000 (24%)</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 24.2%;"></div></div></div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>₹5,000 Tier · 1 Hospital</span><span>₹5,000 (4%)</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 3.8%;"></div></div></div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>₹3,000 Tier · 1 Hospital</span><span>₹3,000 (2.3%)</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 2.3%;"></div></div></div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>₹2,000 Tier · 1 Hospital</span><span>₹2,000 (1.5%)</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 1.5%;"></div></div></div>
+              </div>
+
+              <!-- Right: Clean Table -->
+              <div class="arch-card" style="padding: 0; overflow: hidden;">
+                <table class="editorial-table">
+                  <thead>
+                    <tr><th>Subscription Tier</th><th>Accounts</th><th>Monthly MRR</th><th>Annual Value</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>₹6,000 Plan</td><td>15</td><td>₹90,000</td><td>₹10.80L</td></tr>
+                    <tr><td>₹8,000 Plan</td><td>4</td><td>₹32,000</td><td>₹3.84L</td></tr>
+                    <tr><td>₹5,000 Plan</td><td>1</td><td>₹5,000</td><td>₹0.60L</td></tr>
+                    <tr><td>₹3,000 Plan</td><td>1</td><td>₹3,000</td><td>₹0.36L</td></tr>
+                    <tr><td>₹2,000 Plan</td><td>1</td><td>₹2,000</td><td>₹0.24L</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Pricing Lever Callout -->
+            <div class="arch-card bg-tint anim d3" style="padding: 10px 16px; flex-grow: 0;">
+              <strong style="font-size: 18.2px;">Immediate Expansion Lever:</strong>
+              <span style="font-size: 17.5px; color: var(--ink-secondary); margin-left: 6px;">Migrating the three legacy sub-₹6,000 accounts to standard ₹6,000 adds ₹8,000 MRR (+₹96,000 ARR) without acquiring a single new client.</span>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Unit Economics</div>
+              <div>10 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 11 · PRICING
+               ================================================================= -->
+          <section class="slide" data-slide="11" data-title="11 Pricing">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">SaaS Tiers · 2024</div>
+              <div class="editorial-top-right">11 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">11</div>
+                <div>
+                  <h2 class="section-main-title">Flat monthly SaaS. No per-bed maths, no setup fee.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Frictionless pricing designed for rapid hospital acquisition.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Pricing Tiers</div>
+            </div>
+
+            <div class="grid-3 anim d2" style="margin-bottom: 10px;">
+              <div class="arch-card border-top-thick" style="text-align: center; padding: 24px 18px;">
+                <div class="card-kicker" style="justify-content: center;">SINGLE-SITE CLINICS</div>
+                <div class="stat-hero-label">STARTER</div>
+                <div style="font-size: 53.2px; font-weight: 800; margin: 8px 0;">₹5,000<span style="font-size: 19.6px; font-weight: 500; color:var(--ink-muted);">/mo</span></div>
+                <p class="card-text" style="margin-bottom: 14px;">Core OPD, billing, and registration modules. Zero upfront setup charges.</p>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--line-hairline);">TARGET: CLINICS &lt;20 BEDS</div>
+              </div>
+
+              <div class="arch-card dark-hero" style="text-align: center; padding: 24px 18px;">
+                <div class="card-kicker" style="color: rgba(255,255,255,0.7); justify-content: center;">MOST POPULAR · STANDARD</div>
+                <div class="stat-hero-label" style="color: rgba(255,255,255,0.8);">GROWTH</div>
+                <div style="font-size: 53.2px; font-weight: 800; color:#fff; margin: 8px 0;">₹10,000<span style="font-size: 19.6px; font-weight: 500; color:rgba(255,255,255,0.6);">/mo</span></div>
+                <p class="card-text" style="color: rgba(255,255,255,0.85); margin-bottom: 14px;">Full 8 modules, WhatsApp delivery engine, and daily AI 8 AM morning briefs.</p>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: rgba(255,255,255,0.6); padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">TARGET: HOSPITALS 20–80 BEDS</div>
+              </div>
+
+              <div class="arch-card border-top-thick" style="text-align: center; padding: 24px 18px;">
+                <div class="card-kicker" style="justify-content: center;">MULTI-SITE FACILITIES</div>
+                <div class="stat-hero-label">ENTERPRISE</div>
+                <div style="font-size: 53.2px; font-weight: 800; margin: 8px 0;">₹15,000+<span style="font-size: 19.6px; font-weight: 500; color:var(--ink-muted);">/mo</span></div>
+                <p class="card-text" style="margin-bottom: 14px;">Multi-branch analytics, custom workflow tailoring, and dedicated 24/7 account manager.</p>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--line-hairline);">TARGET: HOSPITALS 80+ BEDS</div>
+              </div>
+            </div>
+
+            <!-- Guarantee Banner -->
+            <div class="arch-card bg-tint anim d3" style="padding: 10px 16px; flex-grow: 0;">
+              <strong style="font-size: 18.2px;">Simple Contract Terms:</strong>
+              <span style="font-size: 17.5px; color: var(--ink-secondary); margin-left: 6px;">Monthly invoicing · No lock-in contracts · Zero hidden maintenance or hardware fees.</span>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>SaaS Pricing Tiers</div>
+              <div>11 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 12 · MARKET SIZE
+               ================================================================= -->
+          <section class="slide" data-slide="12" data-title="12 Market">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Market Opportunity · 2024</div>
+              <div class="editorial-top-right">12 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">12</div>
+                <div>
+                  <h2 class="section-main-title">Thirty thousand hospitals, barely served.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Massive underserved segment overlooked by enterprise HMS software.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Market Opportunity</div>
+            </div>
+
+            <div class="grid-4 anim d2" style="margin-bottom: 10px;">
+              <div class="arch-card border-top-thick">
+                <div class="stat-hero-label">TAM</div>
+                <div class="stat-hero-num" style="font-size: 47.6px;">₹634 Cr</div>
+                <div class="stat-hero-sub">~44,000 private hospitals × ₹12,000/mo blended ARPA</div>
+              </div>
+
+              <div class="arch-card border-top-thick">
+                <div class="stat-hero-label">SAM</div>
+                <div class="stat-hero-num" style="font-size: 47.6px;">₹288 Cr</div>
+                <div class="stat-hero-sub">~30,000 hospitals under 100 beds currently underserved</div>
+              </div>
+
+              <div class="arch-card border-top-thick">
+                <div class="stat-hero-label">SOM</div>
+                <div class="stat-hero-num" style="font-size: 47.6px;">₹4.8 Cr</div>
+                <div class="stat-hero-sub">500 hospitals, North India, over a 3-year horizon</div>
+              </div>
+
+              <div class="arch-card dark-hero">
+                <div class="stat-hero-num" style="color: #fff; font-size: 47.6px;">0.07%</div>
+                <div class="stat-hero-label" style="color: rgba(255,255,255,0.7);">Current Penetration</div>
+                <div class="stat-hero-sub" style="color: rgba(255,255,255,0.8);">22 of 30,000 target facilities</div>
+              </div>
+            </div>
+
+            <div class="arch-card bg-tint anim d3" style="padding: 10px 14px; flex-grow: 0; font-family: var(--mono); font-size: 13.3px; color: var(--ink-muted);">
+              HOSPITAL COUNTS: ~70,000 HOSPITALS IN INDIA, OF WHICH ~44,000 PRIVATE (CBHI / NSSO-DERIVED). SEGMENT SPLIT AND PRICING ARE OWN BOTTOM-UP ASSUMPTIONS.
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Market Size & SAM</div>
+              <div>12 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 13 · GO TO MARKET
+               ================================================================= -->
+          <section class="slide" data-slide="13" data-title="13 Distribution">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Distribution Engine · 2024</div>
+              <div class="editorial-top-right">13 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">13</div>
+                <div>
+                  <h2 class="section-main-title">We sell the way hospital owners actually buy.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Peer-driven acquisition motion achieving zero customer churn.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Go-To-Market</div>
+            </div>
+
+            <div class="grid-4 anim d2" style="margin-bottom: 10px;">
+              <div class="arch-card flow-step-box border-top-thick">
+                <div>
+                  <div class="card-kicker">STEP 01</div>
+                  <div class="card-heading">Referral</div>
+                  <p class="card-text">Owner-to-owner introductions open the door with high peer trust and zero outbound friction.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); margin-top: 10px;">CONVERSION: 80% DEMO RATE</div>
+              </div>
+
+              <div class="arch-card flow-step-box border-top-thick">
+                <div>
+                  <div class="card-kicker">STEP 02</div>
+                  <div class="card-heading">Live Demo</div>
+                  <p class="card-text">A live 20-minute demo directly in the hospital showing instant discharge billing on their cases.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); margin-top: 10px;">TIME: 20-MIN IN-PERSON</div>
+              </div>
+
+              <div class="arch-card flow-step-box dark-hero">
+                <div>
+                  <div class="card-kicker" style="color: rgba(255,255,255,0.6);">STEP 03</div>
+                  <div class="card-heading" style="color:#fff;">Paid Buy</div>
+                  <p class="card-text" style="color: rgba(255,255,255,0.85);">Paid from day one — zero free trials, establishing immediate financial commitment.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: rgba(255,255,255,0.6); margin-top: 10px;">TERMS: ADVANCE MONTHLY</div>
+              </div>
+
+              <div class="arch-card flow-step-box border-top-thick">
+                <div>
+                  <div class="card-kicker">STEP 04</div>
+                  <div class="card-heading">Onboarding</div>
+                  <p class="card-text">Live in 4–6 weeks. Funding expands deployment capacity from 2/month to 6–8/month.</p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); margin-top: 10px;">GO-LIVE: 4 WEEKS</div>
+              </div>
+            </div>
+
+            <!-- GTM Unit Economics -->
+            <div class="grid-3 anim d3" style="flex-grow: 0;">
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">CAC PAYBACK</div><strong style="font-size: 19.6px;">1.2 Months</strong></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">LTV / CAC RATIO</div><strong style="font-size: 19.6px;">&gt;18x</strong></div>
+              <div class="arch-card bg-tint" style="padding: 10px 14px;"><div class="card-kicker">ANNUAL CHURN</div><strong style="font-size: 19.6px;">0.0%</strong></div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Distribution Motion</div>
+              <div>13 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 14 · COMPETITIVE MATRIX
+               ================================================================= -->
+          <section class="slide" data-slide="14" data-title="14 Comparison">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Competitive Comparison · 2024</div>
+              <div class="editorial-top-right">14 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">14</div>
+                <div>
+                  <h2 class="section-main-title">We are usually replacing a register, not a rival.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Direct capability breakdown against paper registers and legacy systems.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Comparison Matrix</div>
+            </div>
+
+            <div class="arch-card anim d2" style="padding: 0; overflow: hidden;">
+              <table class="editorial-table">
+                <thead>
+                  <tr>
+                    <th>Capability</th>
+                    <th>Paper + Excel</th>
+                    <th>Legacy HMS</th>
+                    <th>Clinic Apps</th>
+                    <th class="highlight-head">Pulse Grid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Discharge billing speed</td>
+                    <td>Manual (30+ mins)</td>
+                    <td>Complex (10 mins)</td>
+                    <td>Partial</td>
+                    <td class="highlight-cell">Auto in 1.4s</td>
+                  </tr>
+                  <tr>
+                    <td>Time to go live</td>
+                    <td>—</td>
+                    <td>Months (6–12 mo)</td>
+                    <td>Weeks</td>
+                    <td class="highlight-cell">4–6 weeks</td>
+                  </tr>
+                  <tr>
+                    <td>Priced for 20–80 beds</td>
+                    <td>n/a</td>
+                    <td>No (Too expensive)</td>
+                    <td>Yes</td>
+                    <td class="highlight-cell">Yes (Flat SaaS)</td>
+                  </tr>
+                  <tr>
+                    <td>AI co-pilot & auditing</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td class="highlight-cell">Yes (8am Brief)</td>
+                  </tr>
+                  <tr>
+                    <td>WhatsApp delivery</td>
+                    <td>No</td>
+                    <td>Bolted on plugin</td>
+                    <td>Sometimes</td>
+                    <td class="highlight-cell">Native Cloud</td>
+                  </tr>
+                  <tr>
+                    <td>Configured to workflow</td>
+                    <td>n/a</td>
+                    <td>Rigid & fixed</td>
+                    <td>Generic</td>
+                    <td class="highlight-cell">Yes (Tailored)</td>
+                  </tr>
+                  <tr>
+                    <td>Data security & DPDP</td>
+                    <td>None</td>
+                    <td>Yes</td>
+                    <td>Varies</td>
+                    <td class="highlight-cell">AES-256 · DPDP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Competitive Matrix</div>
+              <div>14 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 15 · FUTURE PLANS & AI ROADMAP
+               ================================================================= -->
+          <section class="slide" data-slide="15" data-title="15 Roadmap">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Strategic Roadmap · 2024</div>
+              <div class="editorial-top-right">15 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">15</div>
+                <div>
+                  <h2 class="section-main-title">Building India's category-defining AI hospital OS.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Strategic expansion roadmap across product, compliance, and distribution.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Future Roadmap</div>
+            </div>
+
+            <div class="grid-3 anim d2" style="margin-bottom: 10px;">
+              <!-- 5 AI Features -->
+              <div class="arch-card dark-hero">
+                <div class="card-kicker" style="color: rgba(255,255,255,0.6);">01 · AI EXPANSION</div>
+                <div class="card-heading" style="font-size: 25.2px; color:#fff;">Core AI Initiatives</div>
+                <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.4; margin-top: 6px;">
+                  <div>• <strong>Ambient Scribe (B1):</strong> Transcribes code-switched speech to structured clinical notes.</div>
+                  <div>• <strong>Smart Discharge (B2):</strong> Assembles history into summary templates with citations.</div>
+                  <div>• <strong>Diagnostics AI (C1/C2):</strong> Drafts pathology narratives & escalates critical delta checks.</div>
+                  <div>• <strong>Revenue Sweep (A1):</strong> Nightly reconciliation to surface unbilled exception revenue.</div>
+                  <div>• <strong>WhatsApp Desk (D1):</strong> Patient engagement agent for inquiries & report status.</div>
+                </div>
+              </div>
+
+              <!-- Integrations -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">02 · ECOSYSTEM BRIDGES</div>
+                <div class="card-heading" style="font-size: 25.2px;">National Integrations</div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 16.1px; color: var(--ink-secondary); line-height: 1.4; margin-top: 6px;">
+                  <div>• <strong>ABHA / ABDM:</strong> Ayushman Bharat digital health ID</div>
+                  <div>• <strong>NABH:</strong> Digital quality & clinical audit protocols</div>
+                  <div>• <strong>NCHX:</strong> Cashless claim exchange gateway</div>
+                  <div>• <strong>DHIS2:</strong> National public health data sync</div>
+                </div>
+              </div>
+
+              <!-- Pan-India Scale -->
+              <div class="arch-card border-top-thick">
+                <div class="card-kicker">03 · GEOGRAPHIC SCALE</div>
+                <div class="card-heading" style="font-size: 25.2px;">Pan-India Expansion</div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 16.1px; color: var(--ink-secondary); line-height: 1.4; margin-top: 6px;">
+                  <div>• <strong>Regional Hubs:</strong> Onboarding clusters in North & Central India</div>
+                  <div>• <strong>24/7 Operations:</strong> Dedicated hospital floor support</div>
+                  <div>• <strong>Category Dominance:</strong> Standard OS for 30,000 hospitals</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vision Statement Banner -->
+            <div class="arch-card bg-tint anim d3" style="padding: 10px 16px; flex-grow: 0;">
+              <strong style="font-size: 18.2px;">Core Strategic Mission:</strong>
+              <span style="font-size: 17.5px; color: var(--ink-secondary); margin-left: 6px;">To become the best and only hospital management software across India with deeply integrated AI intelligence.</span>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Strategic Vision & Roadmap</div>
+              <div>15 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 16 · TEAM
+               ================================================================= -->
+          <section class="slide" data-slide="16" data-title="16 Leadership">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Leadership & Team · 2024</div>
+              <div class="editorial-top-right">16 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">16</div>
+                <div>
+                  <h2 class="section-main-title">A team that has shipped into 22 hospitals.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Operators with direct domain experience inside hospital wards.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Execution Team</div>
+            </div>
+
+            <div class="grid-3 anim d2">
+              <div class="arch-card border-top-thick" style="padding: 20px;">
+                <div style="width: 100%; height: 100px; background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 36.4px; font-weight: 700; color: var(--ink-muted); margin-bottom: 12px; border: 1px solid var(--line-hairline);">
+                  MT
+                </div>
+                <div class="card-heading" style="font-size: 23.8px;">Mukund Tyagi</div>
+                <div style="font-family: var(--mono); font-size: 13.3px; font-weight: 700; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px;">Founder & Proprietor</div>
+                <p class="card-text" style="font-size: 16.8px;">
+                  Hands-on operator leading platform architecture, hospital owner sales, and product roadmaps from 0 to 22 deployments.
+                </p>
+              </div>
+
+              <div class="arch-card border-top-thick" style="padding: 20px;">
+                <div style="width: 100%; height: 100px; background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 36.4px; font-weight: 700; color: var(--ink-muted); margin-bottom: 12px; border: 1px solid var(--line-hairline);">
+                  IM
+                </div>
+                <div class="card-heading" style="font-size: 23.8px;">Implementation Team</div>
+                <div style="font-family: var(--mono); font-size: 13.3px; font-weight: 700; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px;">Onboarding & Floor Success</div>
+                <p class="card-text" style="font-size: 16.8px;">
+                  Field specialists conducting rapid 4-week deployments, doctor training, and tailored billing configuration.
+                </p>
+              </div>
+
+              <div class="arch-card border-top-thick" style="padding: 20px;">
+                <div style="width: 100%; height: 100px; background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 36.4px; font-weight: 700; color: var(--ink-muted); margin-bottom: 12px; border: 1px solid var(--line-hairline);">
+                  PE
+                </div>
+                <div class="card-heading" style="font-size: 23.8px;">Product & Engineering</div>
+                <div style="font-family: var(--mono); font-size: 13.3px; font-weight: 700; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px;">AI & Platform Architecture</div>
+                <p class="card-text" style="font-size: 16.8px;">
+                  Engineers scaling real-time discharge billing engines, AI co-pilot models, and ABDM regulatory bridges.
+                </p>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Leadership Team</div>
+              <div>16 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 17 · THE ASK
+               ================================================================= -->
+          <section class="slide" data-slide="17" data-title="17 Investment">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Investment Round · 2024</div>
+              <div class="editorial-top-right">17 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">17</div>
+                <div>
+                  <h2 class="section-main-title">Raising ₹1 crore pre-seed round.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Capital to scale from 22 to 110 hospitals over an 18-month runway.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Pre-Seed Round</div>
+            </div>
+
+            <div class="grid-2 anim d2">
+              <div class="arch-card dark-hero" style="justify-content: space-between; padding: 24px;">
+                <div>
+                  <div class="card-kicker" style="color: rgba(255,255,255,0.6);">TARGET ROUND TERMS</div>
+                  <div class="stat-hero-num" style="font-size: 61.6px; color: #fff; margin: 6px 0 12px;">₹1.00 Cr</div>
+                  <p style="font-size: 18.9px; line-height: 1.6; color: rgba(255,255,255,0.85);">
+                    Angel / Pre-Seed financing. First close ₹50 lakh with ~18 months runway. Target milestone: 110 paying hospitals and ₹1.06 Cr ARR at month 18.
+                  </p>
+                </div>
+                <div style="font-family: var(--mono); font-size: 15.4px; font-weight: 700; color: #ffffff; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.2);">
+                   KEY TARGET: 110 HOSPITALS · ₹1.06 CR ARR
+                </div>
+              </div>
+
+              <div class="arch-card border-top-thick" style="padding: 20px; justify-content: center;">
+                <div class="card-kicker">USE OF FUNDS BREAKDOWN</div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>01 · Sales & Field Implementation</span><span>38%</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 38%;"></div></div></div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>02 · Product & Engineering</span><span>28%</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 28%;"></div></div></div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>03 · Working Capital & Buffer</span><span>18%</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 18%;"></div></div></div>
+                <div class="alloc-row-item"><div class="alloc-header-line"><span>04 · AI Infra & ABDM Compliance</span><span>16%</span></div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width: 16%;"></div></div></div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>The Investment Ask</div>
+              <div>17 / 18</div>
+            </div>
+          </section>
+
+          <!-- =================================================================
+               SLIDE 18 · CLOSING
+               ================================================================= -->
+          <section class="slide" data-slide="18" data-title="18 Contact">
+            <div class="editorial-top-bar">
+              <div class="editorial-top-left"><img src="Pulse-grid_01.png" alt="Pulse Grid" style="height: 18px; width: auto; margin-top: -2px;"></div>
+              <div class="editorial-top-center">Closing Call to Action · 2024</div>
+              <div class="editorial-top-right">18 / 18</div>
+            </div>
+
+            <div class="editorial-section-header anim d1">
+              <div class="section-header-left">
+                <div class="section-giant-num">18</div>
+                <div>
+                  <h2 class="section-main-title">22 hospitals already run on this. Reach the next 88.</h2>
+                  <div style="font-size: 18.2px; color: var(--ink-secondary); margin-top: 2px;">Direct partnership and investor discussions.</div>
+                </div>
+              </div>
+              <div class="section-subtitle-tag">Call To Action</div>
+            </div>
+
+            <div class="grid-2 anim d2">
+              <div class="arch-card dark-hero" style="justify-content: space-between; padding: 28px;">
+                <div>
+                  <div class="card-kicker" style="color: rgba(255,255,255,0.6);">INVESTOR SUMMARY</div>
+                  <h3 style="font-size: 33.6px; font-weight: 700; color:#fff; line-height: 1.3; margin-top: 8px;">
+                    We are asking for the capacity to reach the next 88 hospitals across India.
+                  </h3>
+                </div>
+                <div style="font-family: var(--mono); font-size: 15.4px; color: rgba(255,255,255,0.7); text-transform: uppercase;">
+                  Location: India · Open for Pre-Seed Participation
+                </div>
+              </div>
+
+              <div class="arch-card border-top-thick" style="justify-content: space-between; padding: 24px;">
+                <div class="card-kicker">DIRECT FOUNDER CONTACT</div>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin: 12px 0; font-family: var(--mono); font-size: 18.2px; font-weight: 600;">
+                  <div>Email: <a href="mailto:mukund@pulse-grid.app" style="color: var(--ink-pure); text-decoration: none;">mukund@pulse-grid.app</a></div>
+                  <div>Phone: <a href="tel:+916283803684" style="color: var(--ink-pure); text-decoration: none;">+91 62838 03684</a></div>
+                  <div>Web: <a href="https://pulse-grid.app" target="_blank" style="color: var(--ink-pure); text-decoration: none;">pulse-grid.app</a></div>
+                </div>
+                <div style="font-family: var(--mono); font-size: 14.0px; color: var(--ink-muted); text-transform: uppercase; padding-top: 10px; border-top: 1px solid var(--line-hairline);">
+                  Request investor deck & live demo instance access
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-bottom-bar">
+              <div>Direct Contact</div>
+              <div>18 / 18</div>
+            </div>
+          </section>
+
+          
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Navigation Bar -->
+    <nav class="deck-controls-bar" id="controlsBar">
+      <button class="ctrl-btn" id="prevBtn" title="Previous">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="slide-counter-badge">
+        <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">18</span>
+      </div>
+      <button class="ctrl-btn" id="nextBtn" title="Next">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div style="width: 1px; height: 16px; background: var(--line-medium);"></div>
+      <div class="current-slide-title" id="currentSlideTitle">01 Introduction</div>
+      <div style="width: 1px; height: 16px; background: var(--line-medium);"></div>
+      <button class="ctrl-btn" id="overviewBtn" title="Overview (O)">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="10" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="1" y="10" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="10" y="10" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <button class="ctrl-btn" id="fullscreenBtn" title="Fullscreen (F)">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 6V2H6M10 2H14V6M14 10V14H10M6 14H2V10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </nav>
+
+    <!-- Overview Modal -->
+    <div class="overview-modal" id="overviewModal">
+      <div class="overview-header">
+        <h2 style="font-size: 28.0px; font-weight: 700;">Slide Overview</h2>
+        <button class="ctrl-btn" id="closeOverviewBtn" style="background: rgba(0,0,0,0.06);">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="overview-grid" id="overviewGrid"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
