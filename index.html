@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pulse Grid — Hospital Management, Supercharged with AI</title>
-  <meta name="description" content="AI-powered hospital management platform. 22 paying hospitals, ₹15.84L ARR, zero free pilots.">
+  <meta name="description" content="AI-powered hospital operating system. 22 paying hospitals, ₹15.84L ARR, zero free pilots.">
 
-  <!-- Mozilla Fonts + Fallbacks -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Zilla+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Mozilla+Headline:wght@400..700&family=Mozilla+Text:wght@400..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,1024 +16,1019 @@
 
   <div id="deck-app">
 
-    <!-- Top Progress Line -->
-    <div class="progress-track-top">
-      <div class="progress-fill-top" id="topProgressBar"></div>
-    </div>
+    <div class="progress-track-top"><div class="progress-fill-top" id="topProgressBar"></div></div>
 
-    <!-- Presentation Stage -->
     <div class="stage-wrapper" id="stageWrapper">
       <div class="slide-canvas" id="slideCanvas">
         <div class="slides-viewport">
 
-          <!-- =================================================================
-               SLIDE 1 · COVER
-               ================================================================= -->
-          <section class="slide active dark-slide" data-slide="1" data-title="01 Cover" style="display: flex; align-items: center; justify-content: center;" data-notes="Pulse Grid introduction. Highlight 22 paying hospitals, 15.84L ARR, and 100% organic referral velocity.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">01 / 18</div>
+          <!-- ============================================================
+               01 · COVER
+               ============================================================ -->
+          <section class="slide hero-cover active" data-slide="1" data-title="01 Cover"
+                   data-notes="Open on the three numbers. 22 paying hospitals, ₹15.84L run-rate, zero free pilots. Everything after this slide is evidence for those three.">
 
-            <div style="display: flex; width: 100%; height: 100%; align-items: center;">
-              <div style="flex: 1.2; padding-right: 48px; display: flex; flex-direction: column; justify-content: center;">
-                <div class="pill-tag" style="margin-bottom: 16px;">CATEGORY-DEFINING HOSPITAL OS</div>
-                <h1 style="font-family: var(--heading); font-size: 64px; font-weight: 500; line-height: 1.08; margin-bottom: 18px; letter-spacing: -0.025em;">
-                  Hospital management, <br><span style="color: var(--royal-blue);">supercharged with AI.</span>
-                </h1>
-                <p style="font-size: 19px; color: var(--ink-secondary); max-width: 560px; line-height: 1.55; margin-bottom: 32px;">
-                  An integrated operating system replacing fragmented paper and legacy desktop software with an active clinical intelligence engine.
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; border-top: 1px solid var(--line-hairline); padding-top: 24px;">
-                   <div class="stat-pill-box">
-                     <div class="num accent">22</div>
-                     <div class="lbl">Paying Hospitals</div>
-                   </div>
-                   <div class="stat-pill-box">
-                     <div class="num accent">₹15.84L</div>
-                     <div class="lbl">Annual ARR</div>
-                   </div>
-                   <div class="stat-pill-box">
-                     <div class="num accent">₹0</div>
-                     <div class="lbl">Free Pilots (100% Paid)</div>
-                   </div>
+            <div class="hero-head">
+              <img class="hero-logo" src="Pulse-grid_01.png" alt="Pulse Grid">
+              <div class="hero-eyebrow">Hospital OS · Pre-seed 2026</div>
+              <h1 class="hero-title">PITCH DECK</h1>
+              <p class="t-lead hero-sub">The operating system for India's mid-sized hospitals — live in 22 of them, all paying.</p>
+            </div>
+
+            <div class="hero-stage">
+              <svg class="hero-svg" viewBox="0 0 1134 363" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <clipPath id="card-clip-hero">
+                    <path d="M 201 23 H 1134 V 283 C 1134 291 1128 297 1120 297 H 1007 C 988 297 973 312 973 331 C 973 342 967 350 957 350 H 76 C 53 350 34 331 34 308 V 145 C 34 122 53 104 76 104 H 165 C 185 104 201 88 201 68 V 23 Z" />
+                  </clipPath>
+                  <linearGradient id="hero-fade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0"    stop-color="#0B1114" stop-opacity="0.05" />
+                    <stop offset="0.55" stop-color="#0B1114" stop-opacity="0.30" />
+                    <stop offset="1"    stop-color="#0B1114" stop-opacity="0.72" />
+                  </linearGradient>
+                </defs>
+                <image href="assets/hero-hospital.png" x="0" y="0" width="1134" height="363"
+                       preserveAspectRatio="xMidYMid slice" clip-path="url(#card-clip-hero)" />
+                <g clip-path="url(#card-clip-hero)">
+                  <!-- Knocks the daylight photo back so it sits inside the dark
+                       deck instead of glaring out of it. -->
+                  <rect x="0" y="0" width="1134" height="363" fill="#0B1114" opacity="0.55" />
+                  <rect x="0" y="0" width="1134" height="363" fill="url(#hero-fade)" />
+                  <path d="M 201 23 H 1134 V 283 C 1134 291 1128 297 1120 297 H 1007 C 988 297 973 312 973 331 C 973 342 967 350 957 350 H 76 C 53 350 34 331 34 308 V 145 C 34 122 53 104 76 104 H 165 C 185 104 201 88 201 68 V 23 Z"
+                        fill="none" stroke="#22C08A" stroke-width="2" stroke-opacity="0.85" />
+
+                  <g transform="translate(765 58)"><g class="hero-dept" style="animation-delay:0s"><rect x="0" y="-17" width="96" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="48" y="-2" text-anchor="middle" dominant-baseline="middle">BACK OFFICE</text></g></g>
+                  <g transform="translate(760 120)"><g class="hero-dept" style="animation-delay:1s"><rect x="0" y="-17" width="58" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="29" y="-2" text-anchor="middle" dominant-baseline="middle">WARD</text></g></g>
+                  <g transform="translate(662 158)"><g class="hero-dept" style="animation-delay:2s"><rect x="0" y="-17" width="88" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="44" y="-2" text-anchor="middle" dominant-baseline="middle">RADIOLOGY</text></g></g>
+                  <g transform="translate(807 166)"><g class="hero-dept" style="animation-delay:3s"><rect x="0" y="-17" width="94" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="47" y="-2" text-anchor="middle" dominant-baseline="middle">BLOOD BANK</text></g></g>
+                  <g transform="translate(556 198)"><g class="hero-dept" style="animation-delay:4s"><rect x="0" y="-17" width="121" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="60.5" y="-2" text-anchor="middle" dominant-baseline="middle">INPATIENT CARE</text></g></g>
+                  <g transform="translate(451 212)"><g class="hero-dept" style="animation-delay:5s"><rect x="0" y="-17" width="34" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="17" y="-2" text-anchor="middle" dominant-baseline="middle">OT</text></g></g>
+                  <g transform="translate(224 162)"><g class="hero-dept" style="animation-delay:6s"><rect x="0" y="-17" width="42" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="21" y="-2" text-anchor="middle" dominant-baseline="middle">LAB</text></g></g>
+                  <g transform="translate(148 235)"><g class="hero-dept" style="animation-delay:7s"><rect x="0" y="-17" width="82" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="41" y="-2" text-anchor="middle" dominant-baseline="middle">PHARMACY</text></g></g>
+                  <g transform="translate(330 265)"><g class="hero-dept" style="animation-delay:8s"><rect x="0" y="-17" width="142" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="71" y="-2" text-anchor="middle" dominant-baseline="middle">BILLING &amp; ACCOUNTS</text></g></g>
+                  <g transform="translate(505 291)"><g class="hero-dept" style="animation-delay:9s"><rect x="0" y="-17" width="105" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="52.5" y="-2" text-anchor="middle" dominant-baseline="middle">PRIMARY CARE</text></g></g>
+                  <g transform="translate(930 286)"><g class="hero-dept" style="animation-delay:10s"><rect x="0" y="-17" width="92" height="23" rx="3" fill="rgba(9,16,19,0.88)" stroke="#22C08A" stroke-width="1.5"/><text x="46" y="-2" text-anchor="middle" dominant-baseline="middle">INVENTORY</text></g></g>
+                </g>
+              </svg>
+
+              <div class="hero-badge">
+                <div class="hero-avatars">
+                  <span style="background:#BFF0DC">V</span>
+                  <span style="background:#6FDCB4">P</span>
+                  <span style="background:#22C08A">G</span>
+                </div>
+                <div class="hero-badge-text">
+                  <b class="hero-badge-num">52K+</b>
+                  <span class="hero-badge-lbl">patients managed</span>
                 </div>
               </div>
-              <div style="flex: 0.8; display: flex; align-items: center; justify-content: center;">
-                <div class="organic-card dark" style="padding: 36px; width: 100%; border-color: rgba(59, 130, 246, 0.25); ">
-                  <div class="pill-tag brand" style="margin-bottom: 14px;">LIVE TRACTION SUMMARY</div>
-                  <div style="font-size: 28px; font-weight: 600; color: #ffffff; line-height: 1.3; margin-bottom: 18px;">
-                    Serving <span style="color: var(--royal-blue);">52,000+ patients</span> across 22 operational facilities.
-                  </div>
-                  <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--ink-secondary); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;">
-                    <div>• <strong>Gross Margin:</strong> <span style="color: #fff;">84% (Cloud SaaS)</span></div>
-                    <div>• <strong>Monthly Churn:</strong> <span style="color: #fff;">0.0% (22/22 Retained)</span></div>
-                    <div>• <strong>Customer CAC:</strong> <span style="color: #fff;">₹0 (Organic Peer Referral)</span></div>
-                  </div>
-                </div>
+
+              <div class="hero-stats">
+                <div class="hero-stat"><b>22</b><span class="t-label">paying hospitals</span></div>
+                <div class="hero-stat"><b>₹15.84L</b><span class="t-label">annual run-rate</span></div>
+                <div class="hero-stat"><b>0.0%</b><span class="t-label">churn to date</span></div>
               </div>
+
+              <button class="hero-next" data-deck-next type="button">
+                NEXT SLIDE
+                <span class="hero-next-icon">↗</span>
+              </button>
             </div>
+          </section>
 
-</section>
-
-          <!-- =================================================================
-               SLIDE 2 · HOW IT STARTED (Origin & Problem)
-               ================================================================= -->
-          <section class="slide anim d1" data-slide="2" data-title="02 Origins" data-notes="The Core Problem: Explain how 30k hospitals are trapped with dead SQL archives and clerical waste.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">02 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1.1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">Why 30,000 mid-sized hospitals run on fragmented paper & legacy software.</h2>
-                   <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px;">
-                     <div class="stat-pill-box">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                          <strong style="color: #fff; font-size: 17px;">01. Dead Archives</strong>
-                          <span class="highlight-num" style="font-size: 18px;">70% Lost Data</span>
-                        </div>
-                        <p style="font-size: 13.5px; color: var(--ink-secondary); margin-top: 4px; line-height: 1.45;">
-                          Gigabytes of clinical histories sit isolated in dead SQL tables. Zero proactive recall, zero automated diagnostic context.
-                        </p>
-                     </div>
-                     <div class="stat-pill-box">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                          <strong style="color: #fff; font-size: 17px;">02. Clerical Waste</strong>
-                          <span class="highlight-num" style="font-size: 18px;">4× Manual Re-entry</span>
-                        </div>
-                        <p style="font-size: 13.5px; color: var(--ink-secondary); margin-top: 4px; line-height: 1.45;">
-                          Staff manually re-enter identical patient details 4 times across reception, lab, ward registers, and billing counters (45m+ discharge delay).
-                        </p>
-                     </div>
-                     <div class="stat-pill-box">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                          <strong style="color: #fff; font-size: 17px;">03. Blind Leadership</strong>
-                          <span class="highlight-num" style="font-size: 18px;">₹48k/mo Leakage</span>
-                        </div>
-                        <p style="font-size: 13.5px; color: var(--ink-secondary); margin-top: 4px; line-height: 1.45;">
-                          Unbilled procedures, bed occupancy bottlenecks, and pharmacy leakages surface only after month-end reconciliation.
-                        </p>
-                     </div>
-                   </div>
-                 </div>
+          <!-- ============================================================
+               02 · THE PROBLEM
+               ============================================================ -->
+          <section class="slide L-split" data-slide="2" data-title="02 The Problem"
+                   data-notes="Three failures, one consequence. Land the ₹48,000 a month — that is the number the hospital owner already feels but cannot see.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">The problem</span>
+                <h2 class="t-display-l">Why 30,000 hospitals still run on paper.</h2>
+                <p class="t-lead">Mid-sized private hospitals are served either by paper registers or by desktop software written two decades ago. Neither produces a usable record.</p>
               </div>
-              <div style="flex: 0.9; padding-left: 48px; display: flex; flex-direction: column; justify-content: center;">
-                 <div class="organic-card dark" style="padding: 36px; border-color: rgba(255,255,255,0.15);">
-                    <div class="pill-tag brand" style="margin-bottom: 16px;">FIRSTHAND OPERATOR NEED</div>
-                    <div style="font-family: var(--heading); font-size: 26px; color: white; line-height: 1.4; margin-bottom: 20px;">
-                      "Legacy software acts as a static digital filing cabinet that slows doctors down instead of an intelligent engine that actively accelerates cash flow."
-                    </div>
-                    <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; font-family: var(--mono); font-size: 12px;">
-                      <span style="color: var(--ink-secondary);">MARKET GAP</span>
-                      <span style="color: var(--royal-blue); font-weight: 700;">30,000 UNDERSERVED FACILITIES</span>
-                    </div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 3 · TIMELINE (May - June - July)
-               ================================================================= -->
-          <section class="slide" data-slide="3" data-title="03 Velocity" data-notes="Velocity Track Record: 0 to 22 hospitals in 90 days with 100% paid conversions and zero free trials.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">03 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">From prototype to 22 hospitals in ninety days.</h2>
-                   <p class="slide-subtitle" style="margin-top: 8px;">Demonstrated rapid product-market velocity with zero external capital raised.</p>
-                 </div>
-                 
-                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; border-top: 1px solid var(--line-hairline); padding-top: 20px;">
-                    <div class="stat-pill-box">
-                      <div class="num accent">4–6 Wks</div>
-                      <div class="lbl">Speed to Go-Live</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">100%</div>
-                      <div class="lbl">Paid Retention (22/22)</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">&lt;₹8,000</div>
-                      <div class="lbl">Blended CAC (Referral)</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">84%</div>
-                      <div class="lbl">Gross Margin (SaaS)</div>
-                    </div>
-                 </div>
-              </div>
-              <div style="flex: 1.4; padding-left: 48px; display: flex; flex-direction: column; justify-content: center; gap: 14px;">
-                 <div class="metric-card-box" style="padding: 18px 22px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                      <div class="pill-tag">MONTH 01 · MAY 2024</div>
-                      <span class="highlight-num" style="font-size: 20px;">v1.0 Core Engine</span>
-                    </div>
-                    <div style="font-family: var(--heading); font-size: 20px; color: #fff; margin-bottom: 4px;">Designed MVP in 4 Weeks</div>
-                    <div style="color: var(--ink-secondary); font-size: 13.5px; line-height: 1.45;">Engineered unified hospital data architecture covering registration, OPD, IPD, lab, pharmacy, and billing.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 18px 22px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                      <div class="pill-tag">MONTH 02 · JUNE 2024</div>
-                      <span class="highlight-num" style="font-size: 20px;">2 Live Deployments</span>
-                    </div>
-                    <div style="font-family: var(--heading); font-size: 20px; color: #fff; margin-bottom: 4px;">Ground-Floor Doctor Shadowing</div>
-                    <div style="color: var(--ink-secondary); font-size: 13.5px; line-height: 1.45;">Shadowed doctors and desk staff on live hospital shifts, iterating daily on workflow friction and billing speed.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 18px 22px; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.03);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                      <div class="pill-tag brand">MONTH 03 · JULY 2024</div>
-                      <span class="highlight-num" style="font-size: 22px; color: var(--royal-blue);">2 to 22 Accounts</span>
-                    </div>
-                    <div style="font-family: var(--heading); font-size: 20px; color: #fff; margin-bottom: 4px;">100% Organic Referral Expansion</div>
-                    <div style="color: var(--ink-secondary); font-size: 13.5px; line-height: 1.45;">Expanded to 22 paying hospitals purely through viral owner-to-owner referrals. 100% paid conversions with zero free trials.</div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 4 · PRODUCT / 8 MODULES
-               ================================================================= -->
-          <section class="slide" data-slide="4" data-title="04 Architecture" data-notes="Architecture: Walk through the 8 interconnected modules and the 1.4s auto-assembled discharge speed.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">04 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1; padding-right: 48px; display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">One system, eight modules.</h2>
-                   <p class="slide-subtitle">An integrated data layer replacing disparate siloed point solutions.</p>
-                 </div>
-                 
-                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; border-top: 1px solid var(--line-hairline); padding-top: 20px;">
-                    <div class="stat-pill-box">
-                      <div class="num accent">1.4s</div>
-                      <div class="lbl">Discharge Assembly</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">3s</div>
-                      <div class="lbl">Medical Certificate AI</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">4–6 Wks</div>
-                      <div class="lbl">Kickoff to Live</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">AES-256</div>
-                      <div class="lbl">DPDP & ABDM Compliant</div>
-                    </div>
-                 </div>
-              </div>
-              <div style="flex: 1.4; display: flex; flex-wrap: wrap; gap: 14px; align-content: center; justify-content: center;">
-                 <div class="organic-card" style="padding: 20px; width: 47%;"><strong>01 · Registration</strong><br><span style="font-size:12.5px; color: var(--ink-secondary)">Instant ABHA sync</span></div>
-                 <div class="organic-card brand" style="padding: 20px; width: 47%; transform: rotate(-1deg);"><strong>02 · Appointments</strong><br><span style="font-size:12.5px;">Smart slot queue</span></div>
-                 <div class="organic-card" style="padding: 20px; width: 47%;"><strong>03 · Billing Engine</strong><br><span style="font-size:12.5px; color: var(--royal-blue); font-weight: 600;">1.4s auto-assembled</span></div>
-                 <div class="organic-card" style="padding: 20px; width: 47%; transform: rotate(1deg);"><strong>04 · Pharmacy</strong><br><span style="font-size:12.5px; color: var(--ink-secondary)">Auto buffer replenish</span></div>
-                 <div class="organic-card" style="padding: 20px; width: 47%;"><strong>05 · Diagnostics</strong><br><span style="font-size:12.5px; color: var(--ink-secondary)">Direct machine sync</span></div>
-                 <div class="organic-card brand" style="padding: 20px; width: 47%; transform: rotate(1deg);"><strong>06 · In-Patient (IPD)</strong><br><span style="font-size:12.5px;">Real-time bed grid</span></div>
-                 <div class="organic-card" style="padding: 20px; width: 47%;"><strong>07 · Executive Audit</strong><br><span style="font-size:12.5px; color: var(--ink-secondary)">Automated P&L reports</span></div>
-                 <div class="organic-card" style="padding: 20px; width: 47%; transform: rotate(-1deg);"><strong>08 · WhatsApp</strong><br><span style="font-size:12.5px; color: var(--royal-blue); font-weight: 600;">Direct patient dispatch</span></div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 5 · CLOSED-LOOP WORKFLOW
-               ================================================================= -->
-          <section class="slide" data-slide="5" data-title="05 Workflow" data-notes="Closed-Loop Workflow: Explain the clinical event stream and the +5.76L annual revenue recovery.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">05 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">The loop that closes the revenue leak.</h2>
-                   <p class="slide-subtitle">End-to-end automated clinical event stream preventing unbilled procedures.</p>
-                 </div>
-                 
-                 <div class="organic-card dark" style="border-color: rgba(59, 130, 246, 0.35); padding: 24px;">
-                    <div class="pill-tag brand" style="margin-bottom: 10px;">ECONOMIC ROI RECOVERY</div>
-                    <div class="stat-hero-val accent" style="font-size: 38px;">+₹5.76L / yr</div>
-                    <p style="font-size: 13.5px; color: var(--ink-secondary); margin-top: 6px; line-height: 1.45;">
-                      A standard 60-bed hospital recovers an estimated <strong style="color: #fff;">₹48,000/month</strong> in previously unbilled pharmacy consumables and bedside procedures.
-                    </p>
-                 </div>
-              </div>
-              <div style="flex: 1.4; padding-left: 48px; display: flex; flex-direction: column; justify-content: center; gap: 12px;">
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                       <span class="pill-tag">STEP 01 · ENTRY</span>
-                       <span class="highlight-num">Instant QR Sync</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff;">Patient Admission & Token Allocation</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">Patient captured once at reception. Details propagate instantly across OPD, lab, pharmacy, and IPD beds.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                       <span class="pill-tag">STEP 02 · CLINICAL</span>
-                       <span class="highlight-num">Auto-Ledger Accrual</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff;">Real-Time Procedure & Drug Logging</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">Doctors log Rx; procedure, consumable, and pathology charges accrue automatically without clerical delay.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px; border-color: rgba(59, 130, 246, 0.4);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                       <span class="pill-tag brand">STEP 03 · AUDIT</span>
-                       <span class="highlight-num" style="color: var(--royal-blue);">1.4s Assembly</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff;">Zero-Leak Discharge Settlement</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">System reconciles all pharmacy slips and ward fees in 1.4 seconds, preventing unbilled departures.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                       <span class="pill-tag">STEP 04 · DISPATCH</span>
-                       <span class="highlight-num">100% WhatsApp Native</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff;">Direct Patient PDF Dispatches</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">Itemized digital receipts, discharge summaries, and diagnostic reports dispatched directly to WhatsApp.</div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 6 · COMPETITIVE MOAT
-               ================================================================= -->
-          <section class="slide" data-slide="6" data-title="06 Moat" data-notes="Defensible Moats: Focus on workflow tailoring, active AI co-pilot, and native WhatsApp data layer.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">06 / 18</div>
-
-            <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
-              <div style="margin-bottom: 24px;">
-                 <h2 class="slide-main-title">Defensible Moat</h2>
-                 <p class="slide-subtitle">Architectural barriers that defend Pulse Grid against incumbents.</p>
-              </div>
-              <div class="grid-strict-3" style="flex-grow: 1;">
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">01.</div></div>
-                  <div class="card-heading">Configured, Not Installed</div>
-                  <div class="pill-tag brand" style="margin-bottom: 12px; font-size: 10px;">4-WEEK TAILORED DEPLOYMENT</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    Each hospital's exact clinical and billing workflow is tailored to match how doctors and desk staff already operate — eliminating costly resistance and training delays.
-                  </div>
-                </div>
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">02.</div></div>
-                  <div class="card-heading">AI Co-pilot, Not Dashboard</div>
-                  <div class="pill-tag brand" style="margin-bottom: 12px; font-size: 10px;">REAL-TIME REVENUE AUDIT</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    An active clinical assistant that surfaces unbilled discharge items, flags bed bottlenecks, and drafts certificates in 3s before mistakes occur.
-                  </div>
-                </div>
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">03.</div></div>
-                  <div class="card-heading">WhatsApp-Native</div>
-                  <div class="pill-tag brand" style="margin-bottom: 12px; font-size: 10px;">ZERO-APP PATIENT ADOPTION</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    WhatsApp is engineered into the core data layer. Invoices, test reports, and appointment reminders are delivered instantly without third-party plugins.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 7 · CLINICAL AI
-               ================================================================= -->
-          <section class="slide" data-slide="7" data-title="07 Clinical AI" data-notes="Clinical AI: Highlight the 8 A.M. Morning Brief and 3-second instant documentation drafts.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">07 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1.1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">Practical Clinical Automation.</h2>
-                   <p class="slide-subtitle">High-utility intelligence built for daily clinical routines — delivered in plain English.</p>
-                 </div>
-                 
-                 <div class="organic-card dark" style="padding: 24px; border-color: rgba(59, 130, 246, 0.25);">
-                    <div class="pill-tag brand" style="margin-bottom: 10px;">TIME REDUCTION BENCHMARK</div>
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 6px;">
-                      <div>
-                        <div class="stat-hero-val accent" style="font-size: 44px;">3s</div>
-                        <div class="stat-sub-lbl">Pulse Grid AI Draft</div>
+              <div class="split">
+                <div class="split-main">
+                  <div class="rows">
+                    <div>
+                      <div class="row-top">
+                        <span class="row-title">01 — Dead archives</span>
+                        <span class="row-tag">70% unreachable</span>
                       </div>
-                      <div style="font-size: 24px; color: var(--ink-muted);">vs</div>
-                      <div>
-                        <div class="stat-hero-val" style="font-size: 44px; color: var(--ink-muted); text-decoration: line-through;">15m</div>
-                        <div class="stat-sub-lbl">Manual Drafting</div>
+                      <p class="row-note">Gigabytes of clinical history sit in isolated SQL tables with no export path. No proactive recall, no diagnostic context, no way to answer a question about last year.</p>
+                    </div>
+                    <div>
+                      <div class="row-top">
+                        <span class="row-title">02 — Clerical waste</span>
+                        <span class="row-tag">4× re-entry</span>
                       </div>
+                      <p class="row-note">Staff key identical patient details four times — reception, lab, ward register, billing counter. Discharge takes 45 minutes of reconciliation before the patient can leave.</p>
                     </div>
-                 </div>
-              </div>
-              <div style="flex: 1.4; padding-left: 48px; display: flex; flex-direction: column; justify-content: center;">
-                 <div class="organic-card dark" style="padding: 28px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                      <div class="pill-tag brand">THE 8 A.M. MORNING BRIEF</div>
-                      <span class="highlight-num">Daily Automated Audit</span>
+                    <div>
+                      <div class="row-top">
+                        <span class="row-title">03 — Blind leadership</span>
+                        <span class="row-tag">Month-end only</span>
+                      </div>
+                      <p class="row-note">Unbilled procedures, bed bottlenecks and pharmacy shrinkage surface at month-end reconciliation — weeks after the patient has gone home and the money is unrecoverable.</p>
                     </div>
-                    <div style="font-family: var(--heading); font-size: 20px; color: white; margin-bottom: 14px;">Actionable hospital intelligence delivered daily to the MD:</div>
-                    <ul style="color: rgba(255,255,255,0.85); font-size: 14.5px; display: flex; flex-direction: column; gap: 10px; margin: 0; padding-left: 20px; line-height: 1.45;">
-                      <li>Ward 2 at <strong style="color: var(--royal-blue);">92% occupancy</strong> — exceeds nurse staffing ratio.</li>
-                      <li><strong style="color: var(--royal-blue);">₹48,000</strong> in pending discharge invoices flagged for unbilled meds.</li>
-                      <li><strong style="color: var(--royal-blue);">3 emergency consumables</strong> dropped below reorder buffer.</li>
-                      <li>Dr. Sharma's OPD has <strong style="color: var(--royal-blue);">14 patients queued</strong> — auto-triaged.</li>
-                    </ul>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 8 · OPERATIONAL IMPACT (BENTO 6-GRID)
-               ================================================================= -->
-          <section class="slide" data-slide="8" data-title="08 Impact" data-notes="Operational Metrics: 52k+ patients served, 180+ daily users, 44k+ bills generated with 100% retention.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">08 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 0.9; padding-right: 48px; display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">Operational Volume.</h2>
-                   <p class="slide-subtitle">Live throughput flowing through the Pulse Grid network daily.</p>
-                 </div>
-                 
-                 <div class="organic-card dark" style="padding: 24px; border-color: rgba(59, 130, 246, 0.3);">
-                    <div class="pill-tag brand" style="margin-bottom: 10px;">GROWTH TRAJECTORY</div>
-                    <div class="stat-hero-val accent" style="font-size: 44px;">+120%</div>
-                    <div class="stat-sub-lbl">Quarter-over-Quarter Transaction Surge</div>
-                    <p style="font-size: 13px; color: var(--ink-secondary); margin-top: 6px;">
-                      Zero paid advertising. 100% driven by hospital owner referrals across North India.
-                    </p>
-                 </div>
-              </div>
-              <div style="flex: 1.5; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-content: center;">
-                 <div class="metric-card-box" style="padding: 18px 20px;">
-                    <div class="stat-hero-val accent" style="font-size: 38px;">22</div>
-                    <div style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px;">Hospitals Served</div>
-                    <div class="pill-tag" style="font-size: 9.5px;">100% RETENTION</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 18px 20px; border-color: rgba(59, 130, 246, 0.3);">
-                    <div class="stat-hero-val accent" style="font-size: 38px;">52k+</div>
-                    <div style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px;">Patients Managed</div>
-                    <div class="pill-tag brand" style="font-size: 9.5px;">END-TO-END</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 18px 20px;">
-                    <div class="stat-hero-val accent" style="font-size: 38px;">180+</div>
-                    <div style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px;">Daily Active Users</div>
-                    <div class="pill-tag" style="font-size: 9.5px;">DOCTORS & STAFF</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 18px 20px;">
-                    <div class="stat-hero-val accent" style="font-size: 38px;">44k+</div>
-                    <div style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px;">Bills Generated</div>
-                    <div class="pill-tag" style="font-size: 9.5px;">OPD & IPD</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 18px 20px;">
-                    <div class="stat-hero-val accent" style="font-size: 38px;">₹9.6L</div>
-                    <div style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px;">Earned Revenue</div>
-                    <div class="pill-tag" style="font-size: 9.5px;">BOOTSTRAPPED</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 18px 20px; border-color: rgba(59, 130, 246, 0.3);">
-                    <div class="stat-hero-val accent" style="font-size: 38px;">₹1.3L</div>
-                    <div style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px;">Monthly MRR</div>
-                    <div class="pill-tag brand" style="font-size: 9.5px;">RECURRING SAAS</div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 9 · TRACTION (22 Hospitals Live)
-               ================================================================= -->
-          <section class="slide" data-slide="9" data-title="09 Traction" data-notes="Commercial Proof: Showcase the 8 active partner hospitals across North India.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">09 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">Commercial Proof</h2>
-                   <p class="slide-subtitle">22 hospitals live. All 22 pay. Zero free pilots. Real paying customer roster across private hospitals in North India.</p>
-                 </div>
-                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; border-top: 1px solid var(--line-hairline); padding-top: 20px;">
-                    <div class="stat-pill-box">
-                      <div class="num accent">22</div>
-                      <div class="lbl">Active Hospitals</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">₹1.32L</div>
-                      <div class="lbl">Monthly MRR</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">₹15.84L</div>
-                      <div class="lbl">Annual Run-Rate</div>
-                    </div>
-                    <div class="stat-pill-box">
-                      <div class="num accent">₹6,000</div>
-                      <div class="lbl">Blended ARPA</div>
-                    </div>
-                 </div>
-              </div>
-              <div style="flex: 1.4; padding-left: 48px; display: flex; flex-direction: column; justify-content: center;">
-                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                    <div class="pill-tag brand">DEPLOYED PARTNER SAMPLE (460+ BEDS MANAGED)</div>
-                    <span style="font-family: var(--mono); font-size: 11px; color: var(--royal-blue);">100% PAID CONVERSION</span>
-                 </div>
-                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">Tyagi Hospital</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">60 Beds</span></div>
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">Sunrise Hospital</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">45 Beds</span></div>
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">Dua Healthcare</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">50 Beds</span></div>
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">Medicare Center</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">80 Beds</span></div>
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">Nanda Hospital</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">35 Beds</span></div>
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">Jeevan Jyoti</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">55 Beds</span></div>
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">Sai Prakash Care</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">70 Beds</span></div>
-                    <div class="partner-roster-item" style="padding: 14px 16px;"><strong style="color: #fff;">SGHMS Facility</strong> <span style="float: right; color: var(--royal-blue); font-weight: 700;">65 Beds</span></div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 10 · REVENUE BREAKDOWN
-               ================================================================= -->
-          <section class="slide" data-slide="10" data-title="10 Economics" data-notes="Unit Economics: 84% gross margins, 6,000 INR ARPA, zero CAC driven by owner-to-owner referrals.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">10 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1.1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">Unit Economics.</h2>
-                   <p class="slide-subtitle">Where the ₹1,32,000 a month comes from. High gross margins with zero acquisition spend.</p>
-                 </div>
-                 
-                 <div class="organic-card dark" style="border-color: rgba(59, 130, 246, 0.35); padding: 24px;">
-                    <div class="pill-tag brand" style="margin-bottom: 10px;">IMMEDIATE EXPANSION LEVER</div>
-                    <div class="stat-hero-val accent" style="font-size: 34px;">+₹96,000 ARR</div>
-                    <p style="font-size: 13.5px; color: var(--ink-secondary); margin-top: 6px; line-height: 1.45;">
-                      Migrating the 3 legacy pilot accounts (&lt;₹6,000) to our standard ₹6,000 tier unlocks <strong style="color: #fff;">₹8,000/mo ARR</strong> immediately with <strong style="color: var(--royal-blue);">₹0 new CAC</strong>.
-                    </p>
-                 </div>
-              </div>
-              <div style="flex: 1.4; padding-left: 48px; display: flex; flex-direction: column; justify-content: center; gap: 12px;">
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <div>
-                         <div style="font-size: 20px; font-weight: 600; color: #fff;">Average SaaS ARPA</div>
-                         <div style="font-size: 12.5px; color: var(--ink-secondary); margin-top: 2px;">Standard monthly subscription fee</div>
-                       </div>
-                       <div class="stat-hero-val accent" style="font-size: 32px; margin: 0;">₹6,000 <span style="font-size: 15px; color: var(--ink-secondary);">/ mo</span></div>
-                    </div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <div>
-                         <div style="font-size: 20px; font-weight: 600; color: #fff;">Hardware & WhatsApp API</div>
-                         <div style="font-size: 12.5px; color: var(--ink-secondary); margin-top: 2px;">Direct pass-through infrastructure costs</div>
-                       </div>
-                       <div class="stat-hero-val" style="font-size: 32px; margin: 0; color: var(--ink-secondary);">₹1,200 <span style="font-size: 15px;">/ mo</span></div>
-                    </div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px; border-color: rgba(59, 130, 246, 0.4);">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <div>
-                         <div style="font-size: 20px; font-weight: 600; color: #fff;">Pure SaaS Gross Margin</div>
-                         <div style="font-size: 12.5px; color: var(--ink-secondary); margin-top: 2px;">AWS Cloud infrastructure efficiency</div>
-                       </div>
-                       <div class="stat-hero-val accent" style="font-size: 38px; margin: 0; color: var(--royal-blue);">84%</div>
-                    </div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <div>
-                         <div style="font-size: 20px; font-weight: 600; color: #fff;">Customer Acquisition Cost (CAC)</div>
-                         <div style="font-size: 12.5px; color: var(--ink-secondary); margin-top: 2px;">Driven 100% by peer owner referrals</div>
-                       </div>
-                       <div class="stat-hero-val accent" style="font-size: 38px; margin: 0; color: var(--royal-blue);">₹0</div>
-                    </div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 11 · PRICING
-               ================================================================= -->
-          <section class="slide" data-slide="11" data-title="11 Pricing" data-notes="SaaS Pricing Tiers: 5k Starter, 10k Standard (Most Popular), and 15k+ Enterprise.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">11 / 18</div>
-
-            <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
-              <div style="margin-bottom: 24px;">
-                 <h2 class="slide-main-title">SaaS Pricing Tiers</h2>
-                 <p class="slide-subtitle">Flat monthly SaaS. No per-bed maths, no setup fee.</p>
-              </div>
-              <div class="grid-strict-3" style="flex-grow: 1;">
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">01.</div></div>
-                  <div class="card-heading">Starter</div>
-                  <div class="pill-tag" style="margin-bottom: 14px; align-self: flex-start;">SINGLE-SITE CLINICS (&lt;20 BEDS)</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    Core OPD, billing, and registration modules. Zero upfront setup charges.
-                    <br><br><strong style="font-size: 28px; color: var(--ink-pure);">₹5,000</strong> <span style="font-size: 14px; color: var(--ink-secondary);">/mo</span>
                   </div>
                 </div>
-                <div class="grid-strict-col" style="background: rgba(59, 130, 246, 0.03);">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number" style="color: var(--royal-blue);">02.</div></div>
-                  <div class="card-heading">Standard</div>
-                  <div class="pill-tag brand" style="margin-bottom: 14px; align-self: flex-start;">MOST POPULAR (20-80 BEDS)</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    Full 8 modules, WhatsApp delivery engine, and daily AI 8 AM morning briefs.
-                    <br><br><strong style="font-size: 28px; color: var(--royal-blue);">₹10,000</strong> <span style="font-size: 14px; color: var(--ink-secondary);">/mo</span>
+                <aside class="split-aside">
+                  <div class="panel">
+                    <span class="t-label">Leaked per hospital, per month</span>
+                    <div class="t-figure-m accent">₹48,000</div>
+                    <p class="t-small">Measured across the deployed base: consumables dispensed but never billed, bedside procedures never logged, ward days never charged.</p>
+                    <div class="panel-list">
+                      <div class="panel-quote">“Legacy software is a filing cabinet that slows doctors down, not an engine that moves cash.”</div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               03 · EXHIBIT A
+               ============================================================ -->
+          <section class="slide L-exhibit" data-slide="3" data-title="03 Exhibit A"
+                   data-notes="Registering one patient. Left is a blank grid you type into every visit; right looks the patient up by UID or phone and auto-fills. This is the screen desk staff use a hundred times a day.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Exhibit A — registering a patient</span>
+                <h2 class="t-display-l">The screen the front desk uses a hundred times a day.</h2>
+              </div>
+              <div class="exhibit">
+                <div class="exhibit-col">
+                  <div class="exhibit-cap">
+                    <span class="t-label">Incumbent — OPD transaction browser</span>
+                    <span class="t-label">In production, Aug 2026</span>
+                  </div>
+                  <div class="exhibit-frame">
+                    <img src="assets/screenshots/legacy-opd.jpeg"
+                         alt="Legacy OPD transaction browser: a filter form above a completely empty result grid.">
                   </div>
                 </div>
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">03.</div></div>
-                  <div class="card-heading">Enterprise</div>
-                  <div class="pill-tag" style="margin-bottom: 14px; align-self: flex-start;">MULTI-SITE (80+ BEDS)</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    Multi-branch analytics, custom workflow tailoring, and dedicated 24/7 account manager.
-                    <br><br><strong style="font-size: 28px; color: var(--ink-pure);">₹15,000+</strong> <span style="font-size: 14px; color: var(--ink-secondary);">/mo</span>
+                <div class="exhibit-col is-own">
+                  <div class="exhibit-cap">
+                    <span class="t-label">Pulse Grid — OPD registration</span>
+                    <span class="t-label">Live instance, Aug 2026</span>
+                  </div>
+                  <div class="exhibit-frame">
+                    <img src="assets/screenshots/pulse-grid-opd.jpeg"
+                         alt="Pulse Grid OPD registration: patient lookup by UID or phone with the intake form beneath.">
                   </div>
                 </div>
               </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 12 · MARKET SIZE
-               ================================================================= -->
-          <section class="slide" data-slide="12" data-title="12 Market" data-notes="Market Opportunity: 30,000 mid-sized hospitals in India representing a 2,100 Cr ARR TAM.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">12 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1.1; padding-right: 48px; display: flex; flex-direction: column; justify-content: center;">
-                <div class="pill-tag brand" style="margin-bottom: 14px;">UNDERSERVED MID-SIZED MARKET</div>
-                <h1 style="font-family: var(--heading); font-size: 60px; font-weight: 500; line-height: 1.1; margin-bottom: 16px;">
-                  <span style="color: var(--royal-blue);">30,000</span> hospitals in India.
-                </h1>
-                <p style="font-size: 19px; color: var(--ink-secondary); max-width: 520px; line-height: 1.5;">
-                  A massive <strong style="color: #fff;">₹2,100 Crore</strong> recurring revenue opportunity overlooked by bloated legacy enterprise vendors.
-                </p>
-                <div style="display: flex; gap: 16px; margin-top: 28px; border-top: 1px solid var(--line-hairline); padding-top: 20px;">
-                   <div class="stat-pill-box" style="flex: 1;">
-                      <div class="lbl">TOTAL ADDRESSABLE (TAM)</div>
-                      <div class="num accent" style="font-size: 28px; margin: 4px 0;">₹634 Cr</div>
-                      <div style="font-size: 11.5px; color: var(--ink-secondary);">44k Hospitals × ₹12k ARPA</div>
-                   </div>
-                   <div class="stat-pill-box" style="flex: 1;">
-                      <div class="lbl">SERVICEABLE (SAM)</div>
-                      <div class="num accent" style="font-size: 28px; margin: 4px 0;">₹288 Cr</div>
-                      <div style="font-size: 11.5px; color: var(--ink-secondary);">30k Hospitals &lt;100 Beds</div>
-                   </div>
-                   <div class="stat-pill-box" style="flex: 1; border-color: rgba(59, 130, 246, 0.4);">
-                      <div class="lbl">3-YR TARGET (SOM)</div>
-                      <div class="num accent" style="font-size: 28px; margin: 4px 0; color: var(--royal-blue);">₹4.8 Cr</div>
-                      <div style="font-size: 11.5px; color: var(--ink-secondary);">500 North India Facilities</div>
-                   </div>
+              <div class="deltas">
+                <div>
+                  <div class="delta-val"><em>Blank grid</em> → <b>lookup by UID or phone</b></div>
+                  <span class="t-label">Finding the patient</span>
                 </div>
-              </div>
-              <div style="flex: 0.9; display: flex; align-items: center; justify-content: center;">
-                <div class="organic-card dark" style="padding: 40px; width: 100%; border-color: rgba(59, 130, 246, 0.2);">
-                   <div class="stat-sub-lbl">CURRENT PENETRATION</div>
-                   <div class="stat-hero-val accent" style="font-size: 64px; margin: 10px 0;">0.07%</div>
-                   <div style="font-size: 19px; font-weight: 600; color: #fff; margin-bottom: 10px;">22 of 30,000 Target Hospitals Live</div>
-                   <p style="font-size: 13.5px; color: var(--ink-secondary); line-height: 1.55;">
-                     First-mover advantage in mid-sized Indian healthcare with proprietary tailored onboarding and active clinical AI.
-                   </p>
+                <div>
+                  <div class="delta-val"><em>Re-keyed every visit</em> → <b>auto-filled</b></div>
+                  <span class="t-label">Returning patients</span>
+                </div>
+                <div>
+                  <div class="delta-val"><em>Export to Excel</em> → <b>ABHA-synced record</b></div>
+                  <span class="t-label">Where the data goes</span>
                 </div>
               </div>
             </div>
+          </section>
 
-</section>
-
-          <!-- =================================================================
-               SLIDE 13 · GO TO MARKET
-               ================================================================= -->
-          <section class="slide" data-slide="13" data-title="13 Distribution" data-notes="Distribution Motion: Referral to 20-min live demo to paid advance to 4-week onboarding.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">13 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">Distribution Engine.</h2>
-                   <p class="slide-subtitle">We sell the way hospital owners actually buy — peer-driven trust with zero customer churn.</p>
-                 </div>
-                 
-                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; border-top: 1px solid var(--line-hairline); padding-top: 20px;">
-                    <div class="stat-pill-box">
-                       <div class="num accent">1.2 Mo</div>
-                       <div class="lbl">CAC Payback</div>
-                    </div>
-                    <div class="stat-pill-box">
-                       <div class="num accent">&gt;18x</div>
-                       <div class="lbl">LTV / CAC</div>
-                    </div>
-                    <div class="stat-pill-box">
-                       <div class="num accent" style="color: var(--royal-blue);">0.0%</div>
-                       <div class="lbl">Annual Churn</div>
-                    </div>
-                 </div>
+          <!-- ============================================================
+               04 · EXHIBIT B
+               ============================================================ -->
+          <section class="slide L-exhibit" data-slide="4" data-title="04 Exhibit B"
+                   data-notes="This is the one that closes owners. Getting a month of billing out of the incumbent means a 96-item menu and four stacked dialogs. Ours is one register with a download button — the same job the CA asks for every month.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Exhibit B — a month of billing</span>
+                <h2 class="t-display-l">Four stacked dialogs, or one register.</h2>
               </div>
-              <div style="flex: 1.4; padding-left: 48px; display: flex; flex-direction: column; justify-content: center; gap: 12px;">
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <span class="pill-tag">STEP 01 · REFERRAL</span>
-                       <span class="highlight-num">80% Demo Booking</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff; margin-top: 4px;">Owner-to-Owner Introductions</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">Peer trust unlocks direct founder-to-MD conversations with zero outbound friction.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <span class="pill-tag">STEP 02 · LIVE DEMO</span>
-                       <span class="highlight-num">20-Min In-Person</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff; margin-top: 4px;">Live Case-Study Testing</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">Live 20-minute demo on actual patient discharge cases showing instant billing audit.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px; border-color: rgba(59, 130, 246, 0.4);">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <span class="pill-tag brand">STEP 03 · PAID BUY</span>
-                       <span class="highlight-num" style="color: var(--royal-blue);">100% Advance Pay</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff; margin-top: 4px;">Zero Free Trials</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">Paid in advance from day one, establishing immediate hospital owner financial commitment.</div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                       <span class="pill-tag">STEP 04 · ONBOARDING</span>
-                       <span class="highlight-num">4–6 Weeks to Live</span>
-                    </div>
-                    <div style="font-size: 18px; font-weight: 600; color: #fff; margin-top: 4px;">Tailored Floor Configuration</div>
-                    <div style="font-size: 13px; color: var(--ink-secondary); margin-top: 2px;">Pre-seed funding expands team deployment capacity from 2/mo to 6–8 hospitals/month.</div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 14 · COMPETITIVE MATRIX
-               ================================================================= -->
-          <section class="slide" data-slide="14" data-title="14 Comparison" data-notes="Capability Matrix: Breakdown of Pulse Grid vs Paper Registers vs Legacy Enterprise HMS.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">14 / 18</div>
-
-            <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
-              <div style="margin-bottom: 20px;">
-                 <h2 class="slide-main-title">Capability Matrix</h2>
-                 <p class="slide-subtitle">Direct capability breakdown against paper registers and legacy systems.</p>
-              </div>
-              <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-                 <div class="matrix-row-header">
-                    <div style="flex: 2;">Capability</div>
-                    <div style="flex: 1;">Paper + Excel</div>
-                    <div style="flex: 1;">Legacy HMS</div>
-                    <div style="flex: 1; color: var(--royal-blue); font-weight: bold;">Pulse Grid</div>
-                 </div>
-                 <div class="matrix-row">
-                    <div style="flex: 2; font-weight: 500;">Discharge billing speed</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">Manual (30m+)</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">Complex (10m)</div>
-                    <div style="flex: 1; font-weight: bold; color: var(--royal-blue);">Auto in 1.4s</div>
-                 </div>
-                 <div class="matrix-row">
-                    <div style="flex: 2; font-weight: 500;">Time to go live</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">Months</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">Weeks</div>
-                    <div style="flex: 1; font-weight: bold; color: var(--royal-blue);">4–6 weeks</div>
-                 </div>
-                 <div class="matrix-row">
-                    <div style="flex: 2; font-weight: 500;">AI co-pilot & auditing</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">No</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">No</div>
-                    <div style="flex: 1; font-weight: bold; color: var(--royal-blue);">Yes (8am Brief)</div>
-                 </div>
-                 <div class="matrix-row">
-                    <div style="flex: 2; font-weight: 500;">WhatsApp delivery</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">No</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">Bolted on</div>
-                    <div style="flex: 1; font-weight: bold; color: var(--royal-blue);">Native Cloud</div>
-                 </div>
-                 <div class="matrix-row">
-                    <div style="flex: 2; font-weight: 500;">Configured to workflow</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">N/A</div>
-                    <div style="flex: 1; color: var(--ink-secondary);">Rigid</div>
-                    <div style="flex: 1; font-weight: bold; color: var(--royal-blue);">Yes (Tailored)</div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 15 · FUTURE PLANS & AI ROADMAP
-               ================================================================= -->
-          <section class="slide" data-slide="15" data-title="15 Roadmap" data-notes="Strategic Expansion: Core AI initiatives, ABDM/NABH/NCHX national bridges, and geographic scale.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">15 / 18</div>
-
-            <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
-              <div style="margin-bottom: 24px;">
-                 <h2 class="slide-main-title">Strategic Expansion</h2>
-                 <p class="slide-subtitle">Building India's category-defining AI hospital OS across product, compliance, and distribution.</p>
-              </div>
-              <div class="grid-strict-3" style="flex-grow: 1;">
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">01.</div></div>
-                  <div class="card-heading">Core AI Initiatives</div>
-                  <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--ink-secondary); line-height: 1.45;">
-                    <div>• <strong>Ambient Scribe:</strong> Transcribes speech to clinical notes.</div>
-                    <div>• <strong>Smart Discharge:</strong> Summary templates with citations.</div>
-                    <div>• <strong>Diagnostics AI:</strong> Drafts pathology narratives.</div>
-                    <div>• <strong>Revenue Sweep:</strong> Surfaces unbilled exception revenue.</div>
+              <div class="exhibit">
+                <div class="exhibit-col">
+                  <div class="exhibit-cap">
+                    <span class="t-label">Incumbent — building one report</span>
+                    <span class="t-label">In production, Aug 2026</span>
+                  </div>
+                  <div class="exhibit-frame">
+                    <img src="assets/screenshots/legacy-charges.jpeg"
+                         alt="Legacy report builder: four overlapping dialog windows beside a 96-item numbered menu.">
                   </div>
                 </div>
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">02.</div></div>
-                  <div class="card-heading">National Integrations</div>
-                  <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--ink-secondary); line-height: 1.45;">
-                    <div>• <strong>ABHA / ABDM:</strong> Ayushman Bharat digital health ID</div>
-                    <div>• <strong>NABH:</strong> Digital quality & clinical audit protocols</div>
-                    <div>• <strong>NCHX:</strong> Cashless claim exchange gateway</div>
-                    <div>• <strong>DHIS2:</strong> National public health data sync</div>
+                <div class="exhibit-col is-own">
+                  <div class="exhibit-cap">
+                    <span class="t-label">Pulse Grid — bill register</span>
+                    <span class="t-label">Live instance, Aug 2026</span>
                   </div>
-                </div>
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">03.</div></div>
-                  <div class="card-heading">Geographic Scale</div>
-                  <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--ink-secondary); line-height: 1.45;">
-                    <div>• <strong>Regional Hubs:</strong> Onboarding in North & Central India</div>
-                    <div>• <strong>24/7 Operations:</strong> Dedicated hospital floor support</div>
-                    <div>• <strong>Category Dominance:</strong> Standard for 30,000 facilities</div>
+                  <div class="exhibit-frame">
+                    <img src="assets/screenshots/pulse-grid-register.jpeg"
+                         alt="Pulse Grid bill register: every bill for the month in one filterable table with print and Excel export.">
                   </div>
                 </div>
               </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 16 · TEAM
-               ================================================================= -->
-          <section class="slide" data-slide="16" data-title="16 Leadership" data-notes="Leadership Team: Founder Mukund Tyagi and domain operators with direct hospital ward experience.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">16 / 18</div>
-
-            <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
-              <div style="margin-bottom: 24px;">
-                 <h2 class="slide-main-title">Leadership Team</h2>
-                 <p class="slide-subtitle">A team that has shipped into 22 hospitals with direct domain experience.</p>
+              <div class="deltas">
+                <div>
+                  <div class="delta-val"><em>96 menu items</em> → <b>one register</b></div>
+                  <span class="t-label">Finding the data</span>
+                </div>
+                <div>
+                  <div class="delta-val"><em>4 stacked dialogs</em> → <b>243 bills, one view</b></div>
+                  <span class="t-label">Steps to a monthly total</span>
+                </div>
+                <div>
+                  <div class="delta-val"><em>Template config</em> → <b>download Excel</b></div>
+                  <span class="t-label">Handing it to the CA</span>
+                </div>
               </div>
-              <div class="grid-strict-3" style="flex-grow: 1;">
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">MT.</div></div>
-                  <div class="card-heading" style="margin-bottom: 2px;">Mukund Tyagi</div>
-                  <div style="font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--royal-blue); margin-bottom: 12px;">Founder & Operator</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    Hands-on operator leading platform architecture, hospital owner sales, and product roadmaps from 0 to 22 deployments.
+            </div>
+          </section>
+
+          <!-- ============================================================
+               05 · EXHIBIT C
+               ============================================================ -->
+          <section class="slide L-exhibit" data-slide="5" data-title="05 Exhibit C"
+                   data-notes="Do not talk over this slide. Let them look. Same job — monthly accounts — in the incumbent system and in ours. This is the whole pitch in one image.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Exhibit C — closing the month</span>
+                <h2 class="t-display-l">Monthly accounts, as a hospital does it today.</h2>
+              </div>
+              <div class="exhibit">
+                <div class="exhibit-col">
+                  <div class="exhibit-cap">
+                    <span class="t-label">Incumbent desktop HMS</span>
+                    <span class="t-label">In production, Aug 2026</span>
+                  </div>
+                  <div class="exhibit-frame">
+                    <img src="assets/screenshots/legacy-accounting.jpeg"
+                         alt="Legacy desktop hospital management system: a dense grey account browser grid of zero-value ledger rows.">
                   </div>
                 </div>
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">IM.</div></div>
-                  <div class="card-heading" style="margin-bottom: 2px;">Implementation</div>
-                  <div style="font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px;">Onboarding & Success</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    Field specialists conducting rapid 4-week deployments, doctor training, and tailored billing configuration.
+                <div class="exhibit-col is-own">
+                  <div class="exhibit-cap">
+                    <span class="t-label accent">Pulse Grid — Accountant</span>
+                    <span class="t-label">Live instance, Aug 2026</span>
                   </div>
-                </div>
-                <div class="grid-strict-col">
-                  <div class="huge-number-wrap"><div class="huge-arrow">↗</div><div class="huge-number">PE.</div></div>
-                  <div class="card-heading" style="margin-bottom: 2px;">Product & Eng</div>
-                  <div style="font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px;">AI Architecture</div>
-                  <div style="font-size: 14.5px; color: var(--ink-secondary); line-height: 1.55; flex-grow: 1;">
-                    Engineers scaling real-time discharge billing engines, AI co-pilot models, and ABDM regulatory bridges.
+                  <div class="exhibit-frame">
+                    <img src="assets/screenshots/pulse-grid-accounting.jpeg"
+                         alt="Pulse Grid accountant module: gross revenue, GST split and per-department revenue breakdown for the month.">
                   </div>
                 </div>
               </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 17 · THE ASK
-               ================================================================= -->
-          <section class="slide" data-slide="17" data-title="17 Investment" data-notes="The Investment Ask: Raising 1 Cr Pre-Seed round for 18-month runway to reach 110 hospitals.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">17 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%;">
-              <div style="flex: 1.1; padding-right: 48px; border-right: 1px solid var(--line-hairline); display: flex; flex-direction: column; justify-content: space-between;">
-                 <div>
-                   <h2 class="slide-main-title">Raising ₹1 crore pre-seed round.</h2>
-                   <p class="slide-subtitle">Capital to scale deployment from 22 to 110 hospitals over an 18-month runway.</p>
-                 </div>
-                 
-                 <div class="organic-card dark" style="padding: 28px; border-color: rgba(59, 130, 246, 0.4);">
-                    <div class="pill-tag brand" style="margin-bottom: 8px;">TARGET ROUND TERMS</div>
-                    <div class="stat-hero-val accent" style="font-size: 52px; margin: 2px 0 8px;">₹1.00 Cr</div>
-                    <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--ink-secondary); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
-                      <div>• <strong>Runway:</strong> <span style="color: #fff;">18 Months (First close ₹50L)</span></div>
-                      <div>• <strong>Target Metric:</strong> <span style="color: var(--royal-blue); font-weight: 700;">110 Paying Hospitals</span></div>
-                      <div>• <strong>ARR Run-Rate:</strong> <span style="color: var(--royal-blue); font-weight: 700;">₹1.06 Crore ARR</span></div>
-                    </div>
-                 </div>
-              </div>
-              <div style="flex: 1.4; padding-left: 48px; display: flex; flex-direction: column; justify-content: center; gap: 14px;">
-                 <div class="pill-tag brand">USE OF FUNDS ALLOCATION</div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                      <strong style="color: #fff; font-size: 16px;">01 · Sales & Field Implementation</strong>
-                      <span class="stat-hero-val accent" style="font-size: 24px; margin: 0;">38%</span>
-                    </div>
-                    <div style="height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;"><div style="height: 100%; width: 38%; background: var(--royal-blue);"></div></div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                      <strong style="color: #fff; font-size: 16px;">02 · Product & Engineering</strong>
-                      <span class="stat-hero-val accent" style="font-size: 24px; margin: 0;">28%</span>
-                    </div>
-                    <div style="height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;"><div style="height: 100%; width: 28%; background: var(--royal-blue);"></div></div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                      <strong style="color: #fff; font-size: 16px;">03 · Working Capital & Buffer</strong>
-                      <span class="stat-hero-val accent" style="font-size: 24px; margin: 0;">18%</span>
-                    </div>
-                    <div style="height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;"><div style="height: 100%; width: 18%; background: var(--royal-blue);"></div></div>
-                 </div>
-                 <div class="metric-card-box" style="padding: 16px 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                      <strong style="color: #fff; font-size: 16px;">04 · AI Infrastructure & ABDM</strong>
-                      <span class="stat-hero-val accent" style="font-size: 24px; margin: 0;">16%</span>
-                    </div>
-                    <div style="height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;"><div style="height: 100%; width: 16%; background: var(--royal-blue);"></div></div>
-                 </div>
-              </div>
-            </div>
-
-</section>
-
-          <!-- =================================================================
-               SLIDE 18 · CLOSING
-               ================================================================= -->
-          <section class="slide" data-slide="18" data-title="18 Contact" data-notes="Closing Call to Action: Partnership contact and direct investor data room access.">
-<div class="slide-top-right-num" title="Click to view all slides (O)">18 / 18</div>
-
-            <div style="display: flex; width: 100%; height: 100%; align-items: center;">
-              <div style="flex: 1.2; padding-right: 48px; display: flex; flex-direction: column; justify-content: center;">
-                <div class="pill-tag brand" style="margin-bottom: 16px;">CALL TO ACTION</div>
-                <h1 style="font-family: var(--heading); font-size: 60px; font-weight: 500; line-height: 1.1; margin-bottom: 18px;">
-                  Reach the next 88.
-                </h1>
-                <p style="font-size: 19px; color: var(--ink-secondary); max-width: 540px; line-height: 1.55;">
-                  We are asking for the capital capacity to scale from 22 to 110 hospitals across India. Direct partnership and investor discussions are open for Pre-Seed participation.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 28px; border-top: 1px solid var(--line-hairline); padding-top: 20px; font-family: var(--mono); font-size: 17px;">
-                   <div><span style="color: var(--ink-secondary);">Email:</span> <strong style="color: #fff;">mukund@pulse-grid.app</strong></div>
-                   <div><span style="color: var(--ink-secondary);">Phone:</span> <strong style="color: #fff;">+91 62838 03684</strong></div>
-                   <div><span style="color: var(--ink-secondary);">Web:</span> <strong style="color: var(--royal-blue);">pulse-grid.app</strong></div>
+              <div class="deltas">
+                <div>
+                  <div class="delta-val"><em>30 min</em> → <b>1.4 seconds</b></div>
+                  <span class="t-label">Discharge bill assembly</span>
                 </div>
-                <div class="cta-btn-link" style="margin-top: 24px; align-self: flex-start; cursor: pointer;">
-                   REQUEST INVESTOR DECK &amp; LIVE DEMO ACCESS →
+                <div>
+                  <div class="delta-val"><em>4× re-entry</em> → <b>entered once</b></div>
+                  <span class="t-label">Patient record</span>
                 </div>
-              </div>
-              <div style="flex: 0.8; display: flex; align-items: center; justify-content: center;">
-                <div class="organic-card dark" style="padding: 36px; width: 100%; border-color: rgba(59, 130, 246, 0.35); ">
-                   <div class="pill-tag brand" style="margin-bottom: 16px;">INVESTOR SANDBOX ACCESS</div>
-                   <div style="font-family: var(--heading); font-size: 24px; font-weight: 600; color: #fff; line-height: 1.3; margin-bottom: 18px;">
-                     Live deployment sandbox with sanitized real hospital data.
-                   </div>
-                   <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: var(--ink-secondary); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
-                     <div>• <strong>Live Demo Instance:</strong> <span style="color: var(--royal-blue); font-family: var(--mono);">demo.pulse-grid.app</span></div>
-                     <div>• <strong>Data Room:</strong> <span style="color: #fff;">Financial model, audits & cap table</span></div>
-                     <div>• <strong>Round Status:</strong> <span style="color: #fff;">₹50L soft-committed of ₹1.00 Cr</span></div>
-                   </div>
-                   <div class="stat-pill-box" style="margin-top: 20px; border-color: rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.04);">
-                      <div class="lbl">NEXT MILESTONE</div>
-                      <div class="num accent" style="font-size: 24px; margin-top: 2px;">110 Hospitals · ₹1.06 Cr ARR</div>
-                   </div>
+                <div>
+                  <div class="delta-val"><em>Month-end</em> → <b>08:00 daily</b></div>
+                  <span class="t-label">Financial visibility</span>
                 </div>
               </div>
             </div>
+          </section>
 
-</section>
+          <!-- ============================================================
+               06 · VELOCITY
+               ============================================================ -->
+          <section class="slide L-figures" data-slide="6" data-title="06 Velocity"
+                   data-notes="Ninety days, no external capital, no free pilots. The 2-to-22 jump was entirely owner-to-owner referral.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Velocity</span>
+                <h2 class="t-display-l">Prototype to 22 hospitals in ninety days.</h2>
+                <p class="t-lead">Built, sold and deployed with no external capital and no free trials.</p>
+              </div>
+              <div class="figure-row is-primary">
+                <div class="figure-cell">
+                  <div class="t-figure-xl">v1.0</div>
+                  <span class="t-label">Month 01 — core engine</span>
+                  <p class="t-small">Unified data architecture across registration, OPD, IPD, lab, pharmacy and billing. Designed and shipped in four weeks.</p>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-xl">2</div>
+                  <span class="t-label">Month 02 — first deployments</span>
+                  <p class="t-small">Shadowed doctors and desk staff through live shifts, iterating daily on workflow friction and billing speed.</p>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-xl accent">22</div>
+                  <span class="t-label">Month 03 — referral expansion</span>
+                  <p class="t-small">Grew to 22 paying hospitals entirely through owner-to-owner referral. Every account paid in advance.</p>
+                </div>
+              </div>
+              <div class="figure-row is-secondary">
+                <div class="figure-cell">
+                  <div class="t-figure-s">4–6 weeks</div>
+                  <span class="t-label">Kickoff to go-live</span>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-s">22 / 22</div>
+                  <span class="t-label">Paid retention</span>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-s">&lt; ₹8,000</div>
+                  <span class="t-label">Blended CAC, fully loaded</span>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-s">84%</div>
+                  <span class="t-label">Gross margin</span>
+                </div>
+              </div>
+            </div>
+          </section>
 
-          
+          <!-- ============================================================
+               07 · PRODUCT
+               ============================================================ -->
+          <section class="slide L-table" data-slide="7" data-title="07 Product"
+                   data-notes="Eight modules, one record. The column that matters is the middle one — what each module actually replaces on the hospital floor.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Product</span>
+                <h2 class="t-display-l">One system, eight modules.</h2>
+              </div>
+              <table class="dtable is-dense">
+                <thead>
+                  <tr>
+                    <th>Module</th>
+                    <th>What it replaces today</th>
+                    <th class="own col-own">In Pulse Grid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>01 · Registration</td><td>Paper OPD slip book</td><td class="col-own own">ABHA-synced record, created once</td></tr>
+                  <tr><td>02 · Appointments</td><td>Phone diary at reception</td><td class="col-own own">Slot queue against live doctor availability</td></tr>
+                  <tr><td>03 · Billing</td><td>Manual bill assembly at discharge</td><td class="col-own own">Auto-assembled in 1.4 seconds</td></tr>
+                  <tr><td>04 · Pharmacy</td><td>Reordering from memory</td><td class="col-own own">Buffer replenishment on consumption</td></tr>
+                  <tr><td>05 · Diagnostics</td><td>Handwritten report slips</td><td class="col-own own">Direct analyser sync into the record</td></tr>
+                  <tr><td>06 · In-patient</td><td>Whiteboard bed chart</td><td class="col-own own">Live bed grid with occupancy alerts</td></tr>
+                  <tr><td>07 · Accounts</td><td>Year-end scramble for the CA</td><td class="col-own own">GST-ready register, exported monthly</td></tr>
+                  <tr><td>08 · WhatsApp</td><td>Printed handouts at the counter</td><td class="col-own own">Native dispatch of bills and reports</td></tr>
+                </tbody>
+              </table>
+              <div class="table-note">
+                <p class="t-small">One patient record underneath all eight. Nothing is re-keyed between modules, which is what makes the 1.4-second discharge possible at all.</p>
+                <span class="t-label">AES-256 · DPDP · ABDM-ready</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               08 · WORKFLOW
+               ============================================================ -->
+          <section class="slide L-sequence" data-slide="8" data-title="08 Workflow"
+                   data-notes="Follow one patient end to end. The leak closes at step three, because nothing can be dispensed without accruing to the ledger.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Workflow</span>
+                <h2 class="t-display-l">The loop that closes the leak.</h2>
+              </div>
+              <div class="sequence">
+                <div class="seq-step">
+                  <span class="seq-num">01</span>
+                  <span class="t-label">Entry</span>
+                  <h3>Admission &amp; token</h3>
+                  <p class="t-small">Patient captured once at reception. Details propagate instantly to OPD, lab, pharmacy and the bed grid. No second form.</p>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">02</span>
+                  <span class="t-label">Clinical</span>
+                  <h3>Auto-ledger accrual</h3>
+                  <p class="t-small">Doctors log prescriptions and procedures. Consumables, pathology and bedside charges accrue to the patient ledger as they happen.</p>
+                </div>
+                <div class="seq-step is-own">
+                  <span class="seq-num">03</span>
+                  <span class="t-label">Audit</span>
+                  <h3>Zero-leak settlement</h3>
+                  <p class="t-small">Every pharmacy slip and ward fee reconciles into one bill in 1.4 seconds. Nothing leaves unbilled, because nothing can.</p>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">04</span>
+                  <span class="t-label">Dispatch</span>
+                  <h3>Straight to WhatsApp</h3>
+                  <p class="t-small">Itemised receipt, discharge summary and diagnostic reports dispatched to the patient's phone. No app to install.</p>
+                </div>
+              </div>
+              <div class="table-note">
+                <p class="t-small">A 60-bed hospital recovers an estimated <strong>₹48,000 a month</strong> in previously unbilled consumables and bedside procedures.</p>
+                <span class="t-figure-s accent">+₹5.76L / yr recovered</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               09 · CLINICAL AI
+               ============================================================ -->
+          <section class="slide L-split" data-slide="9" data-title="09 Clinical AI"
+                   data-notes="This is the differentiator. Not a dashboard the MD has to open — a brief that arrives whether they open anything or not.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Clinical AI</span>
+                <h2 class="t-display-l">Intelligence that arrives, unprompted.</h2>
+                <p class="t-lead">Not a dashboard waiting to be opened. A daily brief in plain English, on the MD's phone at eight in the morning.</p>
+              </div>
+              <div class="split">
+                <div class="split-main">
+                  <div class="findings">
+                    <div>Ward 2 at <strong>92% occupancy</strong> — above the safe nurse staffing ratio.</div>
+                    <div><strong>₹48,000</strong> in pending discharge invoices flagged for unbilled medication.</div>
+                    <div><strong>3 emergency consumables</strong> have dropped below reorder buffer.</div>
+                    <div>Dr. Sharma's OPD has <strong>14 patients queued</strong> — auto-triaged by wait time.</div>
+                  </div>
+                </div>
+                <aside class="split-aside">
+                  <div class="panel">
+                    <span class="t-label">Medical certificate drafting</span>
+                    <div class="t-figure-m accent">3 seconds</div>
+                    <p class="t-small">Against <span class="strike">15 minutes</span> of manual drafting. The same engine drafts discharge summaries and pathology narratives.</p>
+                    <div class="panel-list">
+                      <div><strong>Ambient scribe</strong> — consultation speech to structured clinical notes.</div>
+                      <div><strong>Revenue sweep</strong> — surfaces exception revenue before discharge, not after.</div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               10 · MOAT
+               ============================================================ -->
+          <section class="slide L-sequence" data-slide="10" data-title="10 Moat"
+                   data-notes="Why an incumbent cannot simply copy this. The first one is the real moat — it is a services motion incumbents refuse to run at this price point.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Defensibility</span>
+                <h2 class="t-display-l">Three things a generic HMS cannot copy.</h2>
+              </div>
+              <div class="sequence">
+                <div class="seq-step">
+                  <span class="seq-num">01</span>
+                  <span class="t-label">Configured, not installed</span>
+                  <h3>We match the floor, not the manual</h3>
+                  <p class="t-small">Each hospital's billing and clinical workflow is configured to how its staff already work. Incumbents ship a rigid product and bill for training; we remove the reason training is needed.</p>
+                </div>
+                <div class="seq-step is-own">
+                  <span class="seq-num">02</span>
+                  <span class="t-label">Co-pilot, not dashboard</span>
+                  <h3>The system speaks first</h3>
+                  <p class="t-small">An active assistant that surfaces unbilled items, flags bed bottlenecks and drafts documents before a human thinks to ask. Reporting tools wait to be queried.</p>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">03</span>
+                  <span class="t-label">WhatsApp-native</span>
+                  <h3>Zero-app patient adoption</h3>
+                  <p class="t-small">WhatsApp sits in the core data layer, not in a plugin. Bills, reports and reminders reach the patient on the one app they already have open.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               11 · VOLUME
+               ============================================================ -->
+          <section class="slide L-anchor" data-slide="11" data-title="11 Volume"
+                   data-notes="Real throughput, not registered accounts. 180 daily active users means staff open this to do their job, every shift.">
+            <div class="slide-body">
+              <div class="anchor-top">
+              <div class="figure-row is-primary">
+                <div class="figure-cell">
+                  <div class="t-figure-xl">52k<span class="muted">+</span></div>
+                  <span class="t-label">Patients managed end-to-end</span>
+                  <p class="t-small">Unique patients carrying a complete record from registration through discharge.</p>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-xl">44k<span class="muted">+</span></div>
+                  <span class="t-label">Bills generated, OPD &amp; IPD</span>
+                  <p class="t-small">Every one machine-assembled. None hand-written at the counter.</p>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-xl accent">180<span class="muted">+</span></div>
+                  <span class="t-label">Daily active doctors &amp; staff</span>
+                  <p class="t-small">Opened every shift to do the job — not a report anyone has to remember to run.</p>
+                </div>
+              </div>
+              <div class="figure-row is-secondary">
+                <div class="figure-cell">
+                  <div class="t-figure-m">+120%</div>
+                  <span class="t-label">Quarter-on-quarter transaction growth</span>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-m">₹9.6L</div>
+                  <span class="t-label">Revenue earned, fully bootstrapped</span>
+                </div>
+                <div class="figure-cell">
+                  <div class="t-figure-m">₹1.32L</div>
+                  <span class="t-label">Recurring monthly revenue</span>
+                </div>
+              </div>
+              </div>
+              <div class="anchor-head">
+                <h2>What actually flows through the system.</h2>
+                <p class="t-lead">Throughput the hospitals put through it every day — not registered accounts, not seats sold.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               12 · TRACTION
+               ============================================================ -->
+          <section class="slide L-split is-top" data-slide="12" data-title="12 Traction"
+                   data-notes="Names, bed counts, all paying. Offer references — every one of these owners will take a call.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Commercial proof</span>
+                <h2 class="t-display-l">22 hospitals live. All 22 pay.</h2>
+              </div>
+              <div class="split">
+                <div class="split-main">
+                  <div class="roster">
+                    <div>Tyagi Hospital <em>60 beds</em></div>
+                    <div>Nanda Hospital <em>35 beds</em></div>
+                    <div>Sunrise Hospital <em>45 beds</em></div>
+                    <div>Jeevan Jyoti <em>55 beds</em></div>
+                    <div>Dua Healthcare <em>50 beds</em></div>
+                    <div>Sai Prakash Care <em>70 beds</em></div>
+                    <div>Medicare Center <em>80 beds</em></div>
+                    <div>SGHMS Facility <em>65 beds</em></div>
+                  </div>
+                  <div class="table-note">
+                    <p class="t-small">Sample of eight from the deployed base — 460 beds under management across private hospitals in North India. References available on request.</p>
+                  </div>
+                </div>
+                <aside class="split-aside">
+                  <div class="calc">
+                    <div>
+                      <div><div class="calc-label">Active hospitals</div><div class="calc-work">all paying, none free</div></div>
+                      <div class="calc-val">22</div>
+                    </div>
+                    <div>
+                      <div><div class="calc-label">Monthly recurring revenue</div><div class="calc-work">22 × ₹6,000</div></div>
+                      <div class="calc-val">₹1,32,000</div>
+                    </div>
+                    <div>
+                      <div><div class="calc-label">Annual run-rate</div><div class="calc-work">₹1,32,000 × 12</div></div>
+                      <div class="calc-val accent">₹15.84L</div>
+                    </div>
+                    <div class="is-total">
+                      <div><div class="calc-label">Churn since first deployment</div><div class="calc-work">0 of 22 lost</div></div>
+                      <div class="calc-val">0.0%</div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               13 · UNIT ECONOMICS
+               ============================================================ -->
+          <section class="slide L-table" data-slide="13" data-title="13 Unit Economics"
+                   data-notes="The basis column is the point — every figure here is derived, not asserted. Be explicit that CAC is founder time and travel, not zero.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Unit economics</span>
+                <h2 class="t-display-l">Where the ₹1,32,000 a month comes from.</h2>
+              </div>
+              <table class="dtable">
+                <thead>
+                  <tr>
+                    <th>Line</th>
+                    <th>Basis</th>
+                    <th class="own col-own">Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Blended ARPA</td><td>Flat monthly SaaS across 22 live accounts</td><td class="col-own"><span class="price own">₹6,000 / mo</span></td></tr>
+                  <tr><td>Infrastructure &amp; WhatsApp API</td><td>Cloud and messaging cost per account</td><td class="col-own"><span class="price">₹960 / mo</span></td></tr>
+                  <tr><td>Gross margin</td><td>(6,000 − 960) ÷ 6,000</td><td class="col-own"><span class="price">84%</span></td></tr>
+                  <tr><td>Customer acquisition cost</td><td>₹0 paid media; founder time and travel only</td><td class="col-own"><span class="price">&lt; ₹8,000</span></td></tr>
+                  <tr><td>CAC payback</td><td>8,000 ÷ (6,000 × 84%)</td><td class="col-own"><span class="price">1.6 months</span></td></tr>
+                  <tr><td>LTV / CAC</td><td>36-month life at 84% margin, ₹8,000 CAC</td><td class="col-own"><span class="price">&gt; 18×</span></td></tr>
+                </tbody>
+              </table>
+              <div class="table-note">
+                <p class="t-small">Nearest expansion lever: three early accounts still sit below list price. Moving them to the ₹6,000 tier adds <strong>₹8,000/mo</strong> — <strong>₹96,000 a year</strong> — with no new acquisition cost.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               14 · PRICING
+               ============================================================ -->
+          <section class="slide L-sequence" data-slide="14" data-title="14 Pricing"
+                   data-notes="Flat monthly, no per-bed maths, no setup fee. Note honestly that current blended ARPA is ₹6,000 — these tiers are the new book.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Pricing</span>
+                <h2 class="t-display-l">Flat monthly SaaS. No per-bed maths.</h2>
+              </div>
+              <div class="sequence">
+                <div class="seq-step">
+                  <span class="seq-num">01</span>
+                  <span class="t-label">Starter</span>
+                  <div class="t-figure-m">₹5,000<span class="per">/ mo</span></div>
+                  <h3>Single-site clinics</h3>
+                  <p class="t-small">Under 20 beds. Core registration, OPD and billing. No setup fee, no annual lock-in.</p>
+                </div>
+                <div class="seq-step is-own">
+                  <span class="seq-num">02</span>
+                  <span class="t-label">Standard · most adopted</span>
+                  <div class="t-figure-m accent">₹10,000<span class="per">/ mo</span></div>
+                  <h3>20 to 80 beds</h3>
+                  <p class="t-small">All eight modules, WhatsApp dispatch engine and the daily 8 a.m. AI brief. This is where the deployed base sits.</p>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">03</span>
+                  <span class="t-label">Enterprise</span>
+                  <div class="t-figure-m">₹15,000<span class="per">+ / mo</span></div>
+                  <h3>Multi-site, 80+ beds</h3>
+                  <p class="t-small">Cross-branch analytics, bespoke workflow configuration and a named account manager on 24/7 cover.</p>
+                </div>
+              </div>
+              <div class="table-note">
+                <p class="t-small">Tiers above are the current price book. <strong>Blended ARPA realised across the 22 live accounts is ₹6,000/mo</strong> — early accounts were signed below list and are being migrated up.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               15 · MARKET
+               ============================================================ -->
+          <section class="slide L-anchor" data-slide="15" data-title="15 Market"
+                   data-notes="Sized off realised ARPA, not an aspirational one. If they push, the honest answer is the number goes up as pricing migrates to list.">
+            <div class="slide-body">
+              <div class="anchor-top">
+                <div class="sizing-bar">
+                  <span class="t-label">Sized at</span>
+                  <div class="toggle" role="group" aria-label="Revenue per account assumption">
+                    <button type="button" class="toggle-btn is-on" data-arpa="6000">₹6,000 / mo realised</button>
+                    <button type="button" class="toggle-btn" data-arpa="8000">₹8,000 / mo at list</button>
+                  </div>
+                  <span class="t-small sizing-note" id="sizingNote">Today's blended rate across all 22 live accounts.</span>
+                </div>
+                  <div class="calc" id="marketCalc">
+                    <div>
+                      <div><div class="calc-label">TAM — all private hospitals in India</div><div class="calc-work"><span data-n="44,000">44,000</span> × <span class="arpa-yr">₹72,000</span> / yr</div></div>
+                      <div class="calc-val" data-count="44000">₹317 Cr</div>
+                    </div>
+                    <div>
+                      <div><div class="calc-label">SAM — mid-sized, under 100 beds</div><div class="calc-work"><span data-n="30,000">30,000</span> × <span class="arpa-yr">₹72,000</span> / yr</div></div>
+                      <div class="calc-val" data-count="30000">₹216 Cr</div>
+                    </div>
+                    <div class="is-total">
+                      <div><div class="calc-label">SOM — three-year target</div><div class="calc-work">500 North India facilities × <span class="arpa-yr">₹72,000</span> / yr</div></div>
+                      <div class="calc-val accent" data-count="500">₹3.6 Cr</div>
+                    </div>
+                  </div>
+              </div>
+              <div class="anchor-head">
+                <h2>30,000 hospitals,<br>barely served.</h2>
+                <div class="anchor-aside">
+                  <div>
+                    <div class="t-figure-m accent">0.07%</div>
+                    <span class="t-label">Current penetration — 22 of 30,000</span>
+                  </div>
+                  <div>
+                    <p class="t-small">The incumbents that could serve this segment price and build for 500-bed corporate chains instead.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               16 · DISTRIBUTION
+               ============================================================ -->
+          <section class="slide L-sequence" data-slide="16" data-title="16 Distribution"
+                   data-notes="Hospital owners buy from other hospital owners. The advance payment at step three is the qualifier — it removes tyre-kickers entirely.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Distribution</span>
+                <h2 class="t-display-l">We sell the way owners actually buy.</h2>
+              </div>
+              <div class="sequence">
+                <div class="seq-step">
+                  <span class="seq-num">01</span>
+                  <span class="t-label">Referral</span>
+                  <h3>Owner introduces owner</h3>
+                  <p class="t-small">Peer trust opens a direct founder-to-MD conversation. 80% of introductions convert to a booked demo. No outbound, no ads.</p>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">02</span>
+                  <span class="t-label">Demo</span>
+                  <h3>Twenty minutes, on their data</h3>
+                  <p class="t-small">In-person walkthrough on the hospital's own discharge cases, showing the billing audit against bills they already know.</p>
+                </div>
+                <div class="seq-step is-own">
+                  <span class="seq-num">03</span>
+                  <span class="t-label">Paid</span>
+                  <h3>Advance payment, no trial</h3>
+                  <p class="t-small">Every account pays before deployment starts. It qualifies intent and it is why retention is 22 of 22.</p>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">04</span>
+                  <span class="t-label">Onboarding</span>
+                  <h3>Live in four to six weeks</h3>
+                  <p class="t-small">Floor-level configuration and staff training. This round takes deployment capacity from 2 to 6–8 hospitals a month.</p>
+                </div>
+              </div>
+              <div class="table-note">
+                <p class="t-small">CAC payback 1.6 months · LTV/CAC above 18× · zero churn across the deployed base since first go-live.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               17 · COMPARISON
+               ============================================================ -->
+          <section class="slide L-table" data-slide="17" data-title="17 Comparison"
+                   data-notes="We usually replace a paper register, not a competitor. Legacy HMS is the fallback comparison, not the common one.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Comparison</span>
+                <h2 class="t-display-l">We are usually replacing a register, not a rival.</h2>
+              </div>
+              <table class="dtable">
+                <thead>
+                  <tr>
+                    <th>Capability</th>
+                    <th>Paper &amp; Excel</th>
+                    <th>Legacy HMS</th>
+                    <th class="own col-own">Pulse Grid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Discharge billing</td><td>Manual, 30 min+</td><td>Complex, ~10 min</td><td class="col-own own">Automatic, 1.4s</td></tr>
+                  <tr><td>Time to go live</td><td>—</td><td>Months</td><td class="col-own own">4–6 weeks</td></tr>
+                  <tr><td>AI co-pilot &amp; audit</td><td>None</td><td>None</td><td class="col-own own">Daily 8 a.m. brief</td></tr>
+                  <tr><td>Patient delivery</td><td>Printed at counter</td><td>Bolted-on plugin</td><td class="col-own own">WhatsApp-native</td></tr>
+                  <tr><td>Fits existing workflow</td><td>By definition</td><td>Rigid, staff adapt</td><td class="col-own own">Configured per floor</td></tr>
+                </tbody>
+              </table>
+              <div class="table-note">
+                <p class="t-small">Paper is the real incumbent. It has no licence fee and no migration cost, which is why the only durable argument against it is recovered revenue — and why we lead every demo with the ₹48,000.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               18 · ROADMAP
+               ============================================================ -->
+          <section class="slide L-sequence" data-slide="18" data-title="18 Roadmap"
+                   data-notes="Product, compliance, geography. ABDM is the one that becomes mandatory — being early there is a distribution advantage, not a checkbox.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Roadmap</span>
+                <h2 class="t-display-l">Building the category standard.</h2>
+              </div>
+              <div class="sequence">
+                <div class="seq-step is-own">
+                  <span class="seq-num">01</span>
+                  <span class="t-label">Core AI</span>
+                  <div class="seq-list">
+                    <div><strong>Ambient scribe</strong>Consultation speech into structured clinical notes.</div>
+                    <div><strong>Smart discharge</strong>Summary templates with citations back to the record.</div>
+                    <div><strong>Diagnostics AI</strong>Drafts pathology narratives for verification.</div>
+                    <div><strong>Revenue sweep</strong>Surfaces unbilled exception revenue pre-discharge.</div>
+                  </div>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">02</span>
+                  <span class="t-label">National integrations</span>
+                  <div class="seq-list">
+                    <div><strong>ABHA / ABDM</strong>Ayushman Bharat digital health identity.</div>
+                    <div><strong>NABH</strong>Digital quality and clinical audit protocols.</div>
+                    <div><strong>NCHX</strong>Cashless claim exchange gateway.</div>
+                    <div><strong>DHIS2</strong>National public health data sync.</div>
+                  </div>
+                </div>
+                <div class="seq-step">
+                  <span class="seq-num">03</span>
+                  <span class="t-label">Geographic scale</span>
+                  <div class="seq-list">
+                    <div><strong>Regional hubs</strong>Onboarding teams across North and Central India.</div>
+                    <div><strong>Floor support</strong>24/7 cover for live hospital operations.</div>
+                    <div><strong>Category position</strong>The default system for 30,000 facilities.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               19 · TEAM
+               ============================================================ -->
+          <section class="slide L-figures" data-slide="19" data-title="19 Team"
+                   data-notes="Small, operator-led, has personally deployed into all 22. This round funds the implementation team that removes the founder from the critical path.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">Team</span>
+                <h2 class="t-display-l">Operators who have shipped into 22 hospitals.</h2>
+              </div>
+              <div class="figure-row is-primary">
+                <div class="figure-cell">
+                  <div class="mono-badge is-brand">MT</div>
+                  <h3>Mukund Tyagi</h3>
+                  <span class="t-label role">Founder &amp; operator</span>
+                  <p class="t-small bio">Leads platform architecture, owner-to-owner sales and product direction. Personally ran every deployment from zero to 22.</p>
+                </div>
+                <div class="figure-cell">
+                  <div class="mono-badge">IM</div>
+                  <h3>Implementation</h3>
+                  <span class="t-label role">Onboarding &amp; success</span>
+                  <p class="t-small bio">Field specialists running four-week deployments, doctor training and per-hospital billing configuration.</p>
+                </div>
+                <div class="figure-cell">
+                  <div class="mono-badge">PE</div>
+                  <h3>Product &amp; engineering</h3>
+                  <span class="t-label role">AI architecture</span>
+                  <p class="t-small bio">Engineers scaling the real-time discharge billing engine, the co-pilot models and the ABDM regulatory bridge.</p>
+                </div>
+              </div>
+              <div class="table-note">
+                <p class="t-small">Deliberately small through the first 22 accounts. The primary use of this round is the implementation bench that lets deployment run without the founder in the room.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               20 · THE ASK
+               ============================================================ -->
+          <section class="slide L-split" data-slide="20" data-title="20 The Ask"
+                   data-notes="₹1 crore, 18 months, 22 to 110 hospitals. Be ready for the ARR question — the ₹1.06 Cr assumes blended ARPA rises to ₹8,000 as pricing migrates to list.">
+            <div class="slide-body">
+              <div class="slide-head">
+                <span class="t-label">The ask</span>
+                <h2 class="t-display-l">Raising ₹1 crore pre-seed.</h2>
+                <p class="t-lead">Eighteen months of runway to take deployment from 22 hospitals to 110.</p>
+              </div>
+              <div class="split">
+                <div class="split-main">
+                  <div class="alloc">
+                    <div>
+                      <div class="alloc-top"><span class="alloc-name">Sales &amp; field implementation</span><span class="alloc-pct">38%</span></div>
+                      <div class="alloc-track"><div class="alloc-fill" style="width:38%"></div></div>
+                    </div>
+                    <div>
+                      <div class="alloc-top"><span class="alloc-name">Product &amp; engineering</span><span class="alloc-pct">28%</span></div>
+                      <div class="alloc-track"><div class="alloc-fill" style="width:28%"></div></div>
+                    </div>
+                    <div>
+                      <div class="alloc-top"><span class="alloc-name">Working capital &amp; buffer</span><span class="alloc-pct">18%</span></div>
+                      <div class="alloc-track"><div class="alloc-fill" style="width:18%"></div></div>
+                    </div>
+                    <div>
+                      <div class="alloc-top"><span class="alloc-name">AI infrastructure &amp; ABDM</span><span class="alloc-pct">16%</span></div>
+                      <div class="alloc-track"><div class="alloc-fill" style="width:16%"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <aside class="split-aside">
+                  <div class="panel">
+                    <span class="t-label">Round terms</span>
+                    <div class="t-figure-m accent">₹1.00 Cr</div>
+                    <p class="t-small">₹50L soft-committed. 18-month runway to the next raise.</p>
+                    <div class="panel-list">
+                      <div><strong>Target</strong> 110 paying hospitals by month 18.</div>
+                      <div><strong>ARR at target</strong> ₹1.06 Cr — 110 × ₹8,000 blended × 12, assuming migration to list pricing. At today's ₹6,000 ARPA the same 110 accounts are ₹79.2L.</div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               21 · CONTACT
+               ============================================================ -->
+          <section class="slide L-statement" data-slide="21" data-title="21 Contact"
+                   data-notes="Close on the sandbox offer. A live instance with sanitised real hospital data is more persuasive than anything in this deck.">
+            <div class="slide-body">
+              <div class="statement-lede">
+                <span class="t-label">Next step</span>
+                <h1 class="t-display-xl">Reach the next 88.</h1>
+                <p class="t-lead">Twenty-two hospitals already run on this. We are raising the capacity to reach the rest — and a live sandbox is open to anyone who wants to look under the hood first.</p>
+                <div class="contact-list">
+                  <div><em>Email</em> mukund@pulse-grid.app</div>
+                  <div><em>Phone</em> +91 62838 03684</div>
+                  <div><em>Web</em> pulse-grid.app</div>
+                  <div><em>Sandbox</em> demo.pulse-grid.app</div>
+                </div>
+              </div>
+              <div class="statement-figures">
+                <div>
+                  <div class="t-figure-m">22 → 110</div>
+                  <span class="t-label">Hospitals, next 18 months</span>
+                </div>
+                <div>
+                  <div class="t-figure-m accent">₹1.00 Cr</div>
+                  <span class="t-label">Pre-seed — ₹50L soft-committed</span>
+                </div>
+                <div>
+                  <div class="t-figure-m">Data room</div>
+                  <span class="t-label">Model, audits &amp; cap table on request</span>
+                </div>
+              </div>
+            </div>
+          </section>
 
         </div>
       </div>
     </div>
 
-        <!-- Floating Navigation Bar -->
+    <!-- ============================================================
+         CHROME
+         ============================================================ -->
     <nav class="deck-controls-bar" id="controlsBar">
-      <button class="ctrl-btn" id="prevBtn" title="Previous (← / Space)">
+      <button class="ctrl-btn" id="prevBtn" title="Previous (←)" aria-label="Previous slide">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div class="slide-counter-badge" id="slideCounterBtn" title="Click to view all slides (O)">
-        <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">18</span>
+      <div class="slide-counter-badge" id="slideCounterBtn" title="All slides (O)">
+        <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">21</span>
       </div>
-      <button class="ctrl-btn" id="nextBtn" title="Next (→)">
+      <button class="ctrl-btn" id="nextBtn" title="Next (→)" aria-label="Next slide">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <div style="width: 1px; height: 16px; background: var(--line-medium);"></div>
-      <div class="current-slide-title" id="currentSlideTitle">01 Introduction</div>
-      <div style="width: 1px; height: 16px; background: var(--line-medium);"></div>
-      <button class="ctrl-btn" id="soundBtn" title="Sound Effects (M)">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M7 4L4 7H1V9H4L7 12V4Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 5C12 6 12 10 11 11M13 3C15 5 15 11 13 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-      </button>
-      <button class="ctrl-btn" id="notesBtn" title="Speaker Notes (N)">
+      <div class="ctrl-sep"></div>
+      <div class="current-slide-title" id="currentSlideTitle">01 Cover</div>
+      <div class="ctrl-sep"></div>
+      <button class="ctrl-btn" id="notesBtn" title="Speaker notes (N)" aria-label="Speaker notes">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 2H13V14H3V2Z" stroke="currentColor" stroke-width="1.2"/><path d="M6 5H10M6 8H10M6 11H8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       </button>
-      <button class="ctrl-btn" id="overviewBtn" title="Overview Grid (O)">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="10" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="1" y="10" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="10" y="10" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+      <button class="ctrl-btn" id="overviewBtn" title="Overview (O)" aria-label="Slide overview">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="5" height="5" stroke="currentColor" stroke-width="1.2"/><rect x="10" y="1" width="5" height="5" stroke="currentColor" stroke-width="1.2"/><rect x="1" y="10" width="5" height="5" stroke="currentColor" stroke-width="1.2"/><rect x="10" y="10" width="5" height="5" stroke="currentColor" stroke-width="1.2"/></svg>
       </button>
-      <button class="ctrl-btn" id="helpBtn" title="Keyboard Shortcuts (?)">
+      <button class="ctrl-btn" id="helpBtn" title="Shortcuts (?)" aria-label="Keyboard shortcuts">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 6.5C6.5 5.5 7.5 5 8 5C8.8 5 9.5 5.5 9.5 6.3C9.5 7.5 8 7.8 8 9M8 11V11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       </button>
-      <button class="ctrl-btn" id="fullscreenBtn" title="Fullscreen (F)">
+      <button class="ctrl-btn" id="fullscreenBtn" title="Fullscreen (F)" aria-label="Toggle fullscreen">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 6V2H6M10 2H14V6M14 10V14H10M6 14H2V10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </nav>
 
-    <!-- Presenter Notes Drawer -->
     <div class="notes-drawer" id="notesDrawer">
       <div class="notes-title">
-        <span>Speaker Notes</span>
-        <button class="ctrl-btn" id="closeNotesBtn" style="width:20px; height:20px;">✕</button>
+        <span>Speaker notes</span>
+        <button class="ctrl-btn" id="closeNotesBtn" aria-label="Close notes">✕</button>
       </div>
       <div class="notes-body" id="notesBody">Select a slide to view presenter cues.</div>
     </div>
 
-    <!-- Keyboard Shortcuts Help Modal -->
     <div class="help-modal" id="helpModal">
       <div class="help-card">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <h3 style="font-size: 20px; font-weight: 700;">Keyboard Shortcuts</h3>
-          <button class="ctrl-btn" id="closeHelpBtn">✕</button>
+        <div class="help-head">
+          <h3>Keyboard shortcuts</h3>
+          <button class="ctrl-btn" id="closeHelpBtn" aria-label="Close">✕</button>
         </div>
-        <div class="help-row"><span>Next Slide</span><div><span class="kbd-badge">→</span> <span class="kbd-badge">Space</span> <span class="kbd-badge">PageDown</span></div></div>
-        <div class="help-row"><span>Previous Slide</span><div><span class="kbd-badge">←</span> <span class="kbd-badge">PageUp</span></div></div>
-        <div class="help-row"><span>Overview Grid</span><div><span class="kbd-badge">O</span> <span class="kbd-badge">G</span></div></div>
-        <div class="help-row"><span>Speaker Notes</span><div><span class="kbd-badge">N</span></div></div>
-        <div class="help-row"><span>Sound FX (Mute/Unmute)</span><div><span class="kbd-badge">M</span></div></div>
-        <div class="help-row"><span>Toggle Fullscreen</span><div><span class="kbd-badge">F</span></div></div>
-        <div class="help-row"><span>First / Last Slide</span><div><span class="kbd-badge">Home</span> <span class="kbd-badge">End</span></div></div>
-        <div class="help-row"><span>Close Modals</span><div><span class="kbd-badge">Esc</span></div></div>
+        <div class="help-row"><span>Next slide</span><div><span class="kbd-badge">→</span> <span class="kbd-badge">Space</span></div></div>
+        <div class="help-row"><span>Previous slide</span><div><span class="kbd-badge">←</span> <span class="kbd-badge">PgUp</span></div></div>
+        <div class="help-row"><span>Overview grid</span><div><span class="kbd-badge">O</span> <span class="kbd-badge">G</span></div></div>
+        <div class="help-row"><span>Speaker notes</span><div><span class="kbd-badge">N</span></div></div>
+        <div class="help-row"><span>Fullscreen</span><div><span class="kbd-badge">F</span></div></div>
+        <div class="help-row"><span>First / last slide</span><div><span class="kbd-badge">Home</span> <span class="kbd-badge">End</span></div></div>
+        <div class="help-row"><span>Compare a screenshot full screen</span><div><span class="kbd-badge">Click</span> the image</div></div>
+        <div class="help-row"><span>Move the comparison divider</span><div><span class="kbd-badge">←</span> <span class="kbd-badge">→</span> or drag</div></div>
+        <div class="help-row"><span>Close</span><div><span class="kbd-badge">Esc</span></div></div>
       </div>
     </div>
 
-    <!-- Overview Modal -->
     <div class="overview-modal" id="overviewModal">
       <div class="overview-header">
-        <h2 style="font-size: 28.0px; font-weight: 700;">Slide Overview</h2>
-        <button class="ctrl-btn" id="closeOverviewBtn" style="background: rgba(0,0,0,0.06);">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
+        <h2>All slides</h2>
+        <button class="ctrl-btn" id="closeOverviewBtn" aria-label="Close overview">✕</button>
       </div>
       <div class="overview-grid" id="overviewGrid"></div>
     </div>
 
+    <!-- Full-screen before/after comparison, opened from any exhibit image.
+         The two crops share an aspect ratio, so they overlay exactly and a
+         single divider wipes between them. -->
+    <div class="lightbox" id="lightbox" hidden>
+      <div class="lb-bar">
+        <span class="lb-title" id="lbTitle"></span>
+        <span class="lb-hint">Drag the divider · ← → to wipe · Esc to close</span>
+        <button class="ctrl-btn" id="lbClose" aria-label="Close comparison">✕</button>
+      </div>
+      <div class="lb-stage" id="lbStage">
+        <figure class="lb-compare" id="lbCompare">
+          <img class="lb-img" id="lbAfter" alt="">
+          <span class="lb-clip" id="lbClip"><img class="lb-img" id="lbBefore" alt=""></span>
+          <span class="lb-handle" id="lbHandle"><i></i></span>
+          <figcaption class="lb-tag lb-tag-l" id="lbTagL"></figcaption>
+          <figcaption class="lb-tag lb-tag-r" id="lbTagR"></figcaption>
+        </figure>
+      </div>
+    </div>
+
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

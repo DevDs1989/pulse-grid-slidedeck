@@ -1,230 +1,325 @@
 /**
- * Pulse Grid — Neo-Brutalist Presentation Engine
- * Dark Mode, Audio FX, Speaker Notes, Overview & Touch Navigation
+ * Pulse Grid — deck engine.
+ *
+ * Navigation, generated document furniture (masthead / folio / footer),
+ * speaker notes, overview, and three interactions:
+ *   1. Full-screen before/after comparison on the exhibit slides.
+ *   2. A live pricing assumption toggle on the market-sizing slide.
+ *   3. Spring slide transitions via Motion, loaded opportunistically.
+ *
+ * The furniture is generated rather than authored so slide count and section
+ * names live in exactly one place — the data-title attribute on each section.
  */
 (() => {
   'use strict';
 
-  const $ = (s, p = document) => p.querySelector(s);
+  const $  = (s, p = document) => p.querySelector(s);
   const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 
-  const canvas = $('#slideCanvas');
-  const slides = $$('.slide');
-  const total  = slides.length;
-  const curNum = $('#currentSlideNum');
-  const totNum = $('#totalSlidesNum');
+  const canvas   = $('#slideCanvas');
+  const slides   = $$('.slide');
+  const total    = slides.length;
+  const curNum   = $('#currentSlideNum');
+  const totNum   = $('#totalSlidesNum');
   const progFill = $('#topProgressBar');
-  const titleEl = $('#currentSlideTitle');
+  const titleEl  = $('#currentSlideTitle');
 
-  // Controls & Modals
-  const prevBtn = $('#prevBtn');
-  const nextBtn = $('#nextBtn');
-  const overviewBtn = $('#overviewBtn');
+  const prevBtn          = $('#prevBtn');
+  const nextBtn          = $('#nextBtn');
+  const overviewBtn      = $('#overviewBtn');
   const closeOverviewBtn = $('#closeOverviewBtn');
-  const overviewModal = $('#overviewModal');
-  const overviewGrid = $('#overviewGrid');
-  const fullscreenBtn = $('#fullscreenBtn');
-  const notesBtn = $('#notesBtn');
-  const notesDrawer = $('#notesDrawer');
-  const closeNotesBtn = $('#closeNotesBtn');
-  const notesBody = $('#notesBody');
-  const helpBtn = $('#helpBtn');
-  const helpModal = $('#helpModal');
-  const closeHelpBtn = $('#closeHelpBtn');
-  const soundBtn = $('#soundBtn');
-  const slideCounterBtn = $('#slideCounterBtn');
+  const overviewModal    = $('#overviewModal');
+  const overviewGrid     = $('#overviewGrid');
+  const fullscreenBtn    = $('#fullscreenBtn');
+  const notesBtn         = $('#notesBtn');
+  const notesDrawer      = $('#notesDrawer');
+  const closeNotesBtn    = $('#closeNotesBtn');
+  const notesBody        = $('#notesBody');
+  const helpBtn          = $('#helpBtn');
+  const helpModal        = $('#helpModal');
+  const closeHelpBtn     = $('#closeHelpBtn');
+  const slideCounterBtn  = $('#slideCounterBtn');
+
+  const WORDMARK = 'Pulse Grid';
+  const LOGO     = 'Pulse-grid_01.png';
+  const ROUND    = 'Pre-seed · ₹1 Cr';
+  const FOOTER_L = 'Confidential';
+  const FOOTER_R = 'August 2026';
 
   let current = 0;
   let overviewOpen = false;
   let notesOpen = false;
   let helpOpen = false;
-  let soundEnabled = true;
 
-  totNum.textContent = total;
+  /* --------------------------------------------------------------------
+     Motion — the vanilla-JS animation engine behind Framer Motion.
+     Framer Motion itself is React-only; this deck has no React and no build
+     step, so we use the same team's DOM library instead. Loaded without
+     await: if the CDN is blocked the CSS transition on .slide already gives
+     a correct (if plainer) fade, so nothing breaks.
+     -------------------------------------------------------------------- */
+  let animate = null;
+  import('https://cdn.jsdelivr.net/npm/motion@11.15.0/+esm')
+    .then((m) => { animate = m.animate; })
+    .catch(() => { /* CSS fallback */ });
 
-  /* ─── Web Audio API Sound Synthesizer ─── */
-  let audioCtx = null;
-  function playSlideSound() {
-    if (!soundEnabled) return;
-    try {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.04);
-      
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
-      
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.04);
-    } catch (e) {}
+  /* --------------------------------------------------------------------
+     Document furniture
+     -------------------------------------------------------------------- */
+
+  const sectionName = (slide) => (slide.dataset.title || '').replace(/^\d+\s*/, '').trim();
+  const pad = (n) => String(n).padStart(2, '0');
+
+  function buildFurniture() {
+    slides.forEach((slide, i) => {
+      if (slide.classList.contains('hero-cover')) return; // cover has its own header
+
+      const meta = (k, v) =>
+        `<span class="rail-meta"><span class="rail-meta-k">${k}</span>` +
+        `<span class="rail-meta-v">${v}</span></span>`;
+
+      const rail = document.createElement('header');
+      rail.className = 'slide-rail';
+      rail.innerHTML =
+        `<img class="rail-logo" src="${LOGO}" alt="${WORDMARK}">` +
+        meta('Section', sectionName(slide)) +
+        meta('Round', ROUND) +
+        meta('Issued', FOOTER_R) +
+        `<span class="rail-spacer"></span>` +
+        `<span class="rail-page">${pad(i + 1)}</span>`;
+
+      const foot = document.createElement('footer');
+      foot.className = 'slide-foot';
+      foot.innerHTML =
+        `<span class="foot-mark">&#9679;</span>` +
+        `<span>${sectionName(slide)}</span>` +
+        `<span class="foot-rule"></span>` +
+        `<span>${FOOTER_L}</span>` +
+        `<span>P.${pad(i + 1)} / ${pad(total)}</span>`;
+
+      slide.prepend(rail);
+      slide.append(foot);
+    });
   }
 
-  function toggleSound() {
-    soundEnabled = !soundEnabled;
-    soundBtn.classList.toggle('active-toggle', soundEnabled);
-    soundBtn.style.opacity = soundEnabled ? '1' : '0.4';
-  }
+  /* --------------------------------------------------------------------
+     Stage scaling — authored at a fixed 1440x810 and scaled to the viewport.
+     -------------------------------------------------------------------- */
 
-  /* ─── Canvas Scale for 16:9 Responsive ─── */
   function scaleCanvas() {
-    const W = 1440, H = 810;
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
-    const s = Math.min(vw / W, (vh - 56) / H, 1.4);
+    const s = Math.min(window.innerWidth / 1440, (window.innerHeight - 56) / 810, 1.4);
     canvas.style.transform = `scale(${s})`;
   }
-  window.addEventListener('resize', scaleCanvas);
-  scaleCanvas();
 
-  /* ─── Navigation ─── */
-  function go(idx, playSound = true) {
-    idx = Math.max(0, Math.min(total - 1, idx));
-    if (idx === current && slides[idx].classList.contains('active')) return;
+  /* --------------------------------------------------------------------
+     Navigation
+     -------------------------------------------------------------------- */
 
-    if (playSound) playSlideSound();
-
-    slides.forEach((s, i) => {
-      s.classList.remove('active', 'prev');
-      if (i < idx) s.classList.add('prev');
-    });
-    slides[idx].classList.add('active');
-    current = idx;
-
-    curNum.textContent = idx + 1;
-    progFill.style.width = `${((idx + 1) / total) * 100}%`;
-    titleEl.textContent = slides[idx].dataset.title || `Slide ${idx + 1}`;
-
-    // Update speaker notes
-    const note = slides[idx].dataset.notes || 'No presenter notes for this slide.';
-    notesBody.textContent = note;
-
-    triggerAnimations(slides[idx]);
-    updateOverviewHighlight();
+  function playTransition(to, dir) {
+    if (!animate || !dir) return;
+    // Always clear whatever we set, even if the animation is interrupted —
+    // a stuck inline opacity:0 would leave a blank slide on screen.
+    const clear = () => { to.style.transform = ''; to.style.opacity = ''; };
+    try {
+      const controls = animate(
+        to,
+        { opacity: [0, 1], transform: [`translateX(${20 * dir}px)`, 'translateX(0px)'] },
+        { type: 'spring', stiffness: 280, damping: 32, mass: 0.7 }
+      );
+      controls?.finished?.then(clear).catch(clear);
+    } catch { clear(); }
+    setTimeout(clear, 800);
   }
 
-  function next() { go(current + 1); }
-  function prev() { go(current - 1); }
+  function go(idx, dir = 0) {
+    const i = Math.max(0, Math.min(total - 1, idx));
+    const moved = i !== current;
+    const d = dir || (moved ? (i > current ? 1 : -1) : 0);
 
-  /* ─── Dynamic Number Counting Animations ─── */
-  function triggerAnimations(slide) {
-    slide.querySelectorAll('.counter-up').forEach(el => {
-      const target = parseInt(el.dataset.target, 10);
-      if (isNaN(target)) return;
-      let v = 0;
-      const step = Math.max(1, target / 30);
-      const tick = () => {
-        v += step;
-        if (v >= target) { el.textContent = target; return; }
-        el.textContent = Math.floor(v);
-        requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    });
+    slides.forEach((s, n) => s.classList.toggle('active', n === i));
+    current = i;
 
-    slide.querySelectorAll('.alloc-bar-fill, .h-bar-fill').forEach(fill => {
-      const w = fill.dataset.width || fill.style.width;
-      fill.style.width = '0%';
-      requestAnimationFrame(() => { fill.style.width = w; });
-    });
+    // Deep link, so a specific slide can be sent to someone directly.
+    // replaceState rather than assigning hash, so Back leaves the deck
+    // instead of walking every slide the presenter visited.
+    history.replaceState(null, '', `#${i + 1}`);
+
+    curNum.textContent = pad(i + 1);
+    progFill.style.width = `${((i + 1) / total) * 100}%`;
+    titleEl.textContent = slides[i].dataset.title || '';
+    notesBody.textContent = slides[i].dataset.notes || 'No notes for this slide.';
+
+    $$('.overview-thumbnail').forEach((t, n) => t.classList.toggle('is-active', n === i));
+    if (moved) playTransition(slides[i], d);
   }
 
-  /* ─── Overview Grid Modal ─── */
+  const next = () => go(current + 1, 1);
+  const prev = () => go(current - 1, -1);
+
+  /* --------------------------------------------------------------------
+     Overview, notes, help
+     -------------------------------------------------------------------- */
+
   function buildOverview() {
     overviewGrid.innerHTML = '';
-    slides.forEach((s, i) => {
-      const title = s.dataset.title || `Slide ${i + 1}`;
+    slides.forEach((slide, i) => {
       const btn = document.createElement('button');
-      btn.className = `overview-thumbnail${i === current ? ' is-active' : ''}`;
-      btn.innerHTML = `<span class="thumb-index">${String(i + 1).padStart(2, '0')}</span><span class="thumb-label">${title}</span>`;
+      btn.className = 'overview-thumbnail';
+      btn.innerHTML =
+        `<span class="thumb-index">${pad(i + 1)}</span>` +
+        `<span class="thumb-label">${sectionName(slide)}</span>`;
       btn.addEventListener('click', () => { go(i); closeOverview(); });
-      overviewGrid.appendChild(btn);
+      overviewGrid.append(btn);
     });
   }
 
-  function openOverview() {
-    buildOverview();
-    overviewModal.classList.add('active');
-    overviewOpen = true;
-  }
+  const openOverview = () => {
+    overviewModal.classList.add('active'); overviewOpen = true;
+    $$('.overview-thumbnail').forEach((t, n) => t.classList.toggle('is-active', n === current));
+  };
+  const closeOverview = () => { overviewModal.classList.remove('active'); overviewOpen = false; };
 
-  function closeOverview() {
-    overviewModal.classList.remove('active');
-    overviewOpen = false;
-  }
-
-  function updateOverviewHighlight() {
-    if (!overviewOpen) return;
-    overviewGrid.querySelectorAll('.overview-thumbnail').forEach((t, i) => {
-      t.classList.toggle('is-active', i === current);
-    });
-  }
-
-  /* ─── Speaker Notes ─── */
   function toggleNotes() {
     notesOpen = !notesOpen;
     notesDrawer.classList.toggle('active', notesOpen);
     notesBtn.classList.toggle('active-toggle', notesOpen);
-    if (notesOpen) {
-      notesBody.textContent = slides[current].dataset.notes || 'No presenter notes.';
-    }
   }
 
-  /* ─── Keyboard Help Modal ─── */
-  function toggleHelp() {
-    helpOpen = !helpOpen;
-    helpModal.classList.toggle('active', helpOpen);
-    helpBtn.classList.toggle('active-toggle', helpOpen);
+  const toggleHelp = () => { helpOpen = !helpOpen; helpModal.classList.toggle('active', helpOpen); };
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
   }
 
-  /* ─── Fullscreen ─── */
-  function toggleFS() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(() => {});
-    } else {
-      document.exitFullscreen();
-    }
+  /* --------------------------------------------------------------------
+     INTERACTION 1 — full-screen before/after comparison
+     Both crops in a pair share an aspect ratio, so they overlay exactly and
+     one divider wipes between them.
+     -------------------------------------------------------------------- */
+
+  const lb        = $('#lightbox');
+  const lbCompare = $('#lbCompare');
+  const lbClip    = $('#lbClip');
+  const lbHandle  = $('#lbHandle');
+  const lbBefore  = $('#lbBefore');
+  const lbAfter   = $('#lbAfter');
+  const lbTitle   = $('#lbTitle');
+  const lbTagL    = $('#lbTagL');
+  const lbTagR    = $('#lbTagR');
+  let lbOpen = false;
+  let wipe = 50;
+
+  function setWipe(p) {
+    wipe = Math.max(0, Math.min(100, p));
+    lbClip.style.width = `${wipe}%`;
+    lbHandle.style.left = `${wipe}%`;
   }
 
-  /* ─── Event Listeners ─── */
-  prevBtn?.addEventListener('click', prev);
-  nextBtn?.addEventListener('click', next);
-  overviewBtn?.addEventListener('click', openOverview);
-  closeOverviewBtn?.addEventListener('click', closeOverview);
-  fullscreenBtn?.addEventListener('click', toggleFS);
-  notesBtn?.addEventListener('click', toggleNotes);
-  closeNotesBtn?.addEventListener('click', () => { notesOpen = false; notesDrawer.classList.remove('active'); notesBtn.classList.remove('active-toggle'); });
-  helpBtn?.addEventListener('click', toggleHelp);
-  closeHelpBtn?.addEventListener('click', () => { helpOpen = false; helpModal.classList.remove('active'); helpBtn.classList.remove('active-toggle'); });
-  soundBtn?.addEventListener('click', toggleSound);
-  slideCounterBtn?.addEventListener('click', openOverview);
+  // The clipped image must stay stage-width, otherwise it squashes as the
+  // divider narrows and the two screenshots fall out of register.
+  const syncClipWidth = () =>
+    lbCompare.style.setProperty('--lb-w', `${lbCompare.clientWidth}px`);
 
-  // Top right slide numbers click -> open overview
-  $$('.slide-top-right-num').forEach((el, idx) => {
-    el.addEventListener('click', openOverview);
+  function openCompare(section) {
+    const cols = $$('.exhibit-col', section);
+    if (cols.length < 2) return;
+    const a = $('img', cols[0]);
+    const b = $('img', cols[1]);
+    if (!a || !b) return;
+
+    lbBefore.src = a.currentSrc || a.src; lbBefore.alt = a.alt;
+    lbAfter.src  = b.currentSrc || b.src; lbAfter.alt  = b.alt;
+    lbTagL.textContent = ($('.t-label', cols[0])?.textContent || 'Before').trim();
+    lbTagR.textContent = ($('.t-label', cols[1])?.textContent || 'After').trim();
+    lbTitle.textContent = ($('h2', section)?.textContent || '').trim();
+
+    lb.hidden = false;
+    lbOpen = true;
+    requestAnimationFrame(() => { syncClipWidth(); setWipe(50); });
+  }
+
+  const closeCompare = () => { lb.hidden = true; lbOpen = false; };
+
+  function wipeFromPointer(e) {
+    const r = lbCompare.getBoundingClientRect();
+    setWipe(((e.clientX - r.left) / r.width) * 100);
+  }
+
+  let dragging = false;
+  lbCompare?.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    lbCompare.setPointerCapture?.(e.pointerId);
+    wipeFromPointer(e);
+  });
+  lbCompare?.addEventListener('pointermove', (e) => { if (dragging) wipeFromPointer(e); });
+  lbCompare?.addEventListener('pointerup', () => { dragging = false; });
+  lbCompare?.addEventListener('pointercancel', () => { dragging = false; });
+  $('#lbClose')?.addEventListener('click', closeCompare);
+  window.addEventListener('resize', () => { if (lbOpen) syncClipWidth(); });
+
+  $$('.L-exhibit').forEach((section) => {
+    $$('.exhibit-frame', section).forEach((frame) => {
+      frame.tabIndex = 0;
+      frame.setAttribute('role', 'button');
+      frame.setAttribute('aria-label', 'Open full-screen before and after comparison');
+      frame.addEventListener('click', () => openCompare(section));
+      frame.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCompare(section); }
+      });
+      const hint = document.createElement('span');
+      hint.className = 'exhibit-zoom';
+      hint.textContent = 'Click to compare full screen';
+      frame.after(hint);
+    });
   });
 
-  /* ─── Keyboard Navigation ─── */
-  document.addEventListener('keydown', e => {
-    if (helpOpen) {
-      if (e.key === 'Escape' || e.key === '?' || e.key === 'h' || e.key === 'H') toggleHelp();
+  /* --------------------------------------------------------------------
+     INTERACTION 2 — live market-sizing assumption
+     Answers the "what happens when pricing migrates to list?" question in
+     the room instead of in a follow-up email.
+     -------------------------------------------------------------------- */
+
+  const fmtINR = (n) => `₹${n.toLocaleString('en-IN')}`;
+  const fmtCr  = (v) => {
+    const cr = v / 1e7;
+    return `₹${cr >= 100 ? Math.round(cr).toLocaleString('en-IN') : cr.toFixed(1)} Cr`;
+  };
+
+  const arpaBtns = $$('.toggle-btn[data-arpa]');
+  arpaBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const arpa = Number(btn.dataset.arpa);
+      arpaBtns.forEach((b) => b.classList.toggle('is-on', b === btn));
+      $$('#marketCalc .arpa-yr').forEach((el) => { el.textContent = fmtINR(arpa * 12); });
+      $$('#marketCalc .calc-val').forEach((el) => {
+        el.textContent = fmtCr(Number(el.dataset.count) * arpa * 12);
+      });
+      const note = $('#sizingNote');
+      if (note) {
+        note.textContent = arpa === 6000
+          ? "Today's blended rate across all 22 live accounts."
+          : 'List pricing, once the early accounts migrate up.';
+      }
+    });
+  });
+
+  /* --------------------------------------------------------------------
+     Input
+     -------------------------------------------------------------------- */
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (lbOpen) closeCompare();
+      if (overviewOpen) closeOverview();
+      if (helpOpen) toggleHelp();
+      if (notesOpen) toggleNotes();
       return;
     }
-    if (overviewOpen) {
-      if (e.key === 'Escape' || e.key === 'o' || e.key === 'O' || e.key === 'g' || e.key === 'G') closeOverview();
-      if (e.key === 'ArrowRight') go(current + 1);
-      if (e.key === 'ArrowLeft') go(current - 1);
+    // While comparing, the arrows drive the wipe rather than the deck.
+    if (lbOpen) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); setWipe(wipe + 4); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); setWipe(wipe - 4); }
       return;
     }
     switch (e.key) {
@@ -234,51 +329,62 @@
         e.preventDefault(); prev(); break;
       case 'Home': e.preventDefault(); go(0); break;
       case 'End':  e.preventDefault(); go(total - 1); break;
-      case 'f': case 'F': e.preventDefault(); toggleFS(); break;
+      case 'f': case 'F': toggleFullscreen(); break;
       case 'o': case 'O': case 'g': case 'G':
-        e.preventDefault(); openOverview(); break;
-      case 'n': case 'N':
-        e.preventDefault(); toggleNotes(); break;
-      case 'm': case 'M':
-        e.preventDefault(); toggleSound(); break;
-      case '?': case 'h': case 'H':
-        e.preventDefault(); toggleHelp(); break;
-      case 'Escape':
-        if (notesOpen) toggleNotes();
-        break;
+        overviewOpen ? closeOverview() : openOverview(); break;
+      case 'n': case 'N': toggleNotes(); break;
+      case '?': case 'h': case 'H': toggleHelp(); break;
     }
   });
 
-  /* ─── Touch Swipe Navigation ─── */
-  let touchStartX = 0;
-  let touchStartY = 0;
-  document.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
+  prevBtn?.addEventListener('click', prev);
+  nextBtn?.addEventListener('click', next);
+  overviewBtn?.addEventListener('click', () => (overviewOpen ? closeOverview() : openOverview()));
+  closeOverviewBtn?.addEventListener('click', closeOverview);
+  slideCounterBtn?.addEventListener('click', openOverview);
+  notesBtn?.addEventListener('click', toggleNotes);
+  closeNotesBtn?.addEventListener('click', toggleNotes);
+  helpBtn?.addEventListener('click', toggleHelp);
+  closeHelpBtn?.addEventListener('click', toggleHelp);
+  fullscreenBtn?.addEventListener('click', toggleFullscreen);
+  $$('[data-deck-next]').forEach((el) => el.addEventListener('click', next));
+
+  // Touch swipe
+  let touchX = 0;
+  document.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    if (lbOpen) return;
+    const dx = e.changedTouches[0].screenX - touchX;
+    if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
   }, { passive: true });
 
-  document.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    const dy = e.changedTouches[0].clientY - touchStartY;
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
-      if (dx < 0) next();
-      else prev();
-    }
+  // Debounced wheel
+  let wheelLock = false;
+  document.addEventListener('wheel', (e) => {
+    if (wheelLock || overviewOpen || lbOpen || Math.abs(e.deltaY) < 30) return;
+    wheelLock = true;
+    (e.deltaY > 0 ? next : prev)();
+    setTimeout(() => { wheelLock = false; }, 600);
   }, { passive: true });
 
-  /* ─── Mouse Wheel Navigation (Debounced) ─── */
-  let lastWheelTime = 0;
-  window.addEventListener('wheel', e => {
-    if (overviewOpen || helpOpen) return;
-    const now = Date.now();
-    if (now - lastWheelTime < 600) return;
-    if (Math.abs(e.deltaY) > 30) {
-      lastWheelTime = now;
-      if (e.deltaY > 0) next();
-      else prev();
-    }
-  }, { passive: true });
+  window.addEventListener('resize', scaleCanvas);
 
-  // Initialize
-  go(0, false);
+  const slideFromHash = () => {
+    const n = parseInt(String(location.hash).replace('#', ''), 10);
+    return Number.isFinite(n) ? n - 1 : 0;
+  };
+  window.addEventListener('hashchange', () => {
+    const i = slideFromHash();
+    if (i !== current) go(i);
+  });
+
+  /* --------------------------------------------------------------------
+     Boot
+     -------------------------------------------------------------------- */
+
+  buildFurniture();
+  buildOverview();
+  totNum.textContent = pad(total);
+  scaleCanvas();
+  go(slideFromHash());
 })();
