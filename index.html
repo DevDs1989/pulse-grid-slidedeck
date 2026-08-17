@@ -276,9 +276,7 @@ h1 em,h2 em,h3 em,.display em{font-style:normal;color:var(--amber);font-weight:6
 .exhibit-frame img{width:100%;height:100%;object-fit:cover;object-position:top left;
   max-width:none;max-height:none;display:block;
   /* knock the bright product UI back so it sits inside the dark deck */
-  filter:saturate(.8) brightness(.93) contrast(1.02);
-  transition:filter .35s ease,transform .5s var(--ease)}
-.exhibit-frame:hover img{filter:saturate(1) brightness(1) contrast(1.04);transform:scale(1.012)}
+  filter:saturate(.8) brightness(.93) contrast(1.02)}
 
 .deltas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex:none;
   margin-top:var(--gap-xl);border-top:1px solid var(--hair)}
@@ -569,25 +567,9 @@ h1 em,h2 em,h3 em,.display em{font-style:normal;color:var(--amber);font-weight:6
   calc(var(--i,0) * 62ms + 90ms),0s}
 .slide.visible .tilt.is-tilting{transition-delay:0s}
 
-/* Ledger lines are not tilt cards, so they keep the surface lift on hover.
-   These are also reveal targets, so the transition list MUST carry the reveal
-   properties too — a bare `transition:background` here outranks .reveal and
-   silently kills the entrance fade on every row. The delay list keeps the
-   stagger on the reveal properties while the hover stays instant. */
-.rows>div,.calc>div,.roster>div{
-  transition:opacity .72s var(--ease),translate .72s var(--ease),
-             background .3s ease}
-.slide.visible .rows>div,.slide.visible .calc>div,.slide.visible .roster>div{
-  transition-delay:calc(var(--i,0) * 62ms + 90ms),
-                   calc(var(--i,0) * 62ms + 90ms),0s}
-.rows>div:hover,.calc>div:hover,.roster>div:hover{background:var(--ink-2)}
-
-.dtable tbody tr{transition:background .25s ease}
-.dtable tbody tr:hover td{color:var(--bone);background:rgba(236,239,241,.04)}
-.dtable tbody tr:hover td.col-own{background:var(--ink-3)}
-
-.delta-val,.row-title{transition:color .25s ease}
-.deltas>div:hover .delta-val em{color:var(--bone-2)}
+/* Nothing else responds to hover. No surface lift, no colour shift, no
+   brightness change — the tilt is the deck's entire hover language, so a
+   row and a card behave identically under the cursor. */
 
 @keyframes draw{to{stroke-dashoffset:0}}
 
@@ -642,7 +624,6 @@ h1 em,h2 em,h3 em,.display em{font-style:normal;color:var(--amber);font-weight:6
 .ov-card{border:1px solid var(--hair);padding:18px 16px;cursor:pointer;
   background:transparent;transition:border-color .22s ease,background .22s ease;
   display:flex;flex-direction:column;gap:10px;min-height:118px}
-.ov-card:hover{border-color:var(--amber)}
 .ov-card.is-current{border-color:var(--amber)}
 .ov-n{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.09em;
   color:var(--amber)}
@@ -663,23 +644,12 @@ h1 em,h2 em,h3 em,.display em{font-style:normal;color:var(--amber);font-weight:6
   font-weight:400;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--bone-3)}
 .lb-bar .lb-title{color:var(--bone)}
-.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;padding:28px 34px;
-  min-height:0}
-.lb-compare{position:relative;max-width:100%;max-height:100%;overflow:hidden;
-  border:1px solid var(--hair);cursor:ew-resize;user-select:none}
-.lb-img{display:block;max-width:100%;max-height:calc(100vh - 190px);width:auto;height:auto}
-.lb-clip{position:absolute;inset:0;overflow:hidden;width:50%}
-.lb-clip .lb-img{max-width:none;max-height:calc(100vh - 190px);width:auto}
-.lb-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--amber);
-  pointer-events:none}
-.lb-handle i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:36px;height:36px;border:1px solid var(--amber);background:var(--ink);
-  border-radius:50%}
-.lb-tag{position:absolute;bottom:16px;font-family:var(--mono);font-weight:400;font-size:11px;
-  letter-spacing:.09em;text-transform:uppercase;padding:7px 11px;
-  background:var(--ink-3);border:1px solid var(--hair)}
-.lb-tag-l{left:16px;color:var(--clay)}
-.lb-tag-r{right:16px;color:var(--amber);border-color:rgba(217,111,76,.5)}
+/* The stage fills the window and is itself the dismiss target — clicking any
+   dark area closes. Only the image stops the click. */
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;
+  padding:28px 34px;min-height:0;cursor:zoom-out}
+.lb-img{display:block;max-width:100%;max-height:calc(100vh - 150px);
+  width:auto;height:auto;border:1px solid var(--hair);cursor:default}
 
 /* inline text editing */
 .edit-hotzone{position:fixed;top:0;left:0;width:80px;height:80px;z-index:1600;cursor:pointer}
@@ -805,7 +775,7 @@ body.editing [contenteditable=true]:focus{outline:1px solid var(--amber)}
           <span class="label">Incumbent — OPD transaction browser</span>
           <span class="label">In production, Aug 2026</span>
         </div>
-        <div class="exhibit-frame" data-compare data-before="assets/screenshots/legacy-opd.jpeg" data-after="assets/screenshots/pulse-grid-opd.jpeg" data-lbtitle="Exhibit A — registering a patient" data-tagl="Incumbent OPD browser" data-tagr="Pulse Grid OPD registration">
+        <div class="exhibit-frame">
           <img src="assets/screenshots/legacy-opd.jpeg" alt="Legacy OPD transaction browser: a filter form above a completely empty result grid.">
         </div>
       </div>
@@ -814,7 +784,7 @@ body.editing [contenteditable=true]:focus{outline:1px solid var(--amber)}
           <span class="label">Pulse Grid — OPD registration</span>
           <span class="label">Live instance, Aug 2026</span>
         </div>
-        <div class="exhibit-frame" data-compare data-before="assets/screenshots/legacy-opd.jpeg" data-after="assets/screenshots/pulse-grid-opd.jpeg" data-lbtitle="Exhibit A — registering a patient" data-tagl="Incumbent OPD browser" data-tagr="Pulse Grid OPD registration">
+        <div class="exhibit-frame">
           <img src="assets/screenshots/pulse-grid-opd.jpeg" alt="Pulse Grid OPD registration: patient lookup by UID or phone with the intake form beneath.">
         </div>
       </div>
@@ -854,7 +824,7 @@ body.editing [contenteditable=true]:focus{outline:1px solid var(--amber)}
           <span class="label">Incumbent — building one report</span>
           <span class="label">In production, Aug 2026</span>
         </div>
-        <div class="exhibit-frame" data-compare data-before="assets/screenshots/legacy-charges.jpeg" data-after="assets/screenshots/pulse-grid-register.jpeg" data-lbtitle="Exhibit B — a month of billing" data-tagl="Incumbent report builder" data-tagr="Pulse Grid bill register">
+        <div class="exhibit-frame">
           <img src="assets/screenshots/legacy-charges.jpeg" alt="Legacy report builder: four overlapping dialog windows beside a 96-item numbered menu.">
         </div>
       </div>
@@ -863,7 +833,7 @@ body.editing [contenteditable=true]:focus{outline:1px solid var(--amber)}
           <span class="label">Pulse Grid — bill register</span>
           <span class="label">Live instance, Aug 2026</span>
         </div>
-        <div class="exhibit-frame" data-compare data-before="assets/screenshots/legacy-charges.jpeg" data-after="assets/screenshots/pulse-grid-register.jpeg" data-lbtitle="Exhibit B — a month of billing" data-tagl="Incumbent report builder" data-tagr="Pulse Grid bill register">
+        <div class="exhibit-frame">
           <img src="assets/screenshots/pulse-grid-register.jpeg" alt="Pulse Grid bill register: every bill for the month in one filterable table with print and Excel export.">
         </div>
       </div>
@@ -903,7 +873,7 @@ body.editing [contenteditable=true]:focus{outline:1px solid var(--amber)}
           <span class="label">Incumbent desktop HMS</span>
           <span class="label">In production, Aug 2026</span>
         </div>
-        <div class="exhibit-frame" data-compare data-before="assets/screenshots/legacy-accounting.jpeg" data-after="assets/screenshots/pulse-grid-accounting.jpeg" data-lbtitle="Exhibit C — closing the month" data-tagl="Incumbent account browser" data-tagr="Pulse Grid accountant">
+        <div class="exhibit-frame">
           <img src="assets/screenshots/legacy-accounting.jpeg" alt="Legacy desktop hospital management system: a dense grey account browser grid of zero-value ledger rows.">
         </div>
       </div>
@@ -912,7 +882,7 @@ body.editing [contenteditable=true]:focus{outline:1px solid var(--amber)}
           <span class="label">Pulse Grid — Accountant</span>
           <span class="label">Live instance, Aug 2026</span>
         </div>
-        <div class="exhibit-frame" data-compare data-before="assets/screenshots/legacy-accounting.jpeg" data-after="assets/screenshots/pulse-grid-accounting.jpeg" data-lbtitle="Exhibit C — closing the month" data-tagl="Incumbent account browser" data-tagr="Pulse Grid accountant">
+        <div class="exhibit-frame">
           <img src="assets/screenshots/pulse-grid-accounting.jpeg" alt="Pulse Grid accountant module: gross revenue, GST split and per-department revenue breakdown for the month.">
         </div>
       </div>
@@ -1621,29 +1591,23 @@ body.editing [contenteditable=true]:focus{outline:1px solid var(--amber)}
     <div class="help-row"><span>Speaker notes</span><div><span class="kbd">N</span></div></div>
     <div class="help-row"><span>Fullscreen</span><div><span class="kbd">F</span></div></div>
     <div class="help-row"><span>First / last slide</span><div><span class="kbd">Home</span><span class="kbd">End</span></div></div>
-    <div class="help-row"><span>Compare an exhibit full screen</span><div><span class="kbd">Click</span> the image</div></div>
-    <div class="help-row"><span>Move the comparison divider</span><div><span class="kbd">←</span><span class="kbd">→</span> or drag</div></div>
+    <div class="help-row"><span>View an exhibit full screen</span><div><span class="kbd">Click</span> the image</div></div>
+    <div class="help-row"><span>Close the full-screen image</span><div><span class="kbd">Click</span> outside it</div></div>
     <div class="help-row"><span>Edit text inline</span><div><span class="kbd">E</span></div></div>
     <div class="help-row"><span>Close</span><div><span class="kbd">Esc</span></div></div>
   </div>
 </div>
 
-<!-- Full-screen before/after wipe, opened from any exhibit image. The two
-     crops share an aspect ratio, so a single divider wipes between them. -->
+<!-- Full-screen view of a single exhibit screenshot. Click anywhere outside
+     the image, or press Esc, to close. -->
 <div class="lightbox" id="lightbox" hidden>
   <div class="lb-bar">
     <span class="lb-title" id="lbTitle"></span>
-    <span>Drag the divider · ← → to wipe · Esc to close</span>
-    <button class="ctrl" id="lbClose" aria-label="Close comparison">✕</button>
+    <span>Click outside the image, or press Esc, to close</span>
+    <button class="ctrl" id="lbClose" aria-label="Close image">✕</button>
   </div>
-  <div class="lb-stage">
-    <figure class="lb-compare" id="lbCompare">
-      <img class="lb-img" id="lbAfter" alt="">
-      <span class="lb-clip" id="lbClip"><img class="lb-img" id="lbBefore" alt=""></span>
-      <span class="lb-handle" id="lbHandle"><i></i></span>
-      <figcaption class="lb-tag lb-tag-l" id="lbTagL"></figcaption>
-      <figcaption class="lb-tag lb-tag-r" id="lbTagR"></figcaption>
-    </figure>
+  <div class="lb-stage" id="lbStage">
+    <img class="lb-img" id="lbImg" alt="">
   </div>
 </div>
 
@@ -1869,49 +1833,31 @@ $('closeHelp').onclick = ()=>helpModal.classList.remove('open');
 })();
 
 /* ============================================================================
-   EXHIBIT COMPARISON LIGHTBOX
-   Both crops share an aspect ratio, so one clip-width wipes between them.
+   EXHIBIT LIGHTBOX
+   Clicking a screenshot opens that one image full screen. Clicking any dark
+   area around it — or Esc, or the close button — dismisses it.
    ========================================================================= */
 (function(){
-  const compare = $('lbCompare'), clip = $('lbClip'), handle = $('lbHandle');
-  let pos = 50, dragging = false;
+  const img = $('lbImg');
 
-  const setPos = p => {
-    pos = Math.max(0, Math.min(100, p));
-    clip.style.width = pos + '%';
-    handle.style.left = pos + '%';
-  };
-
-  document.querySelectorAll('[data-compare]').forEach(frame => {
+  document.querySelectorAll('.exhibit-frame').forEach(frame => {
     frame.addEventListener('click', () => {
-      $('lbBefore').src = frame.dataset.before;
-      $('lbAfter').src  = frame.dataset.after;
-      $('lbTitle').textContent = frame.dataset.lbtitle;
-      $('lbTagL').textContent  = frame.dataset.tagl;
-      $('lbTagR').textContent  = frame.dataset.tagr;
+      const source = frame.querySelector('img');
+      img.src = source.getAttribute('src');
+      img.alt = source.getAttribute('alt') || '';
+      // name the shot by its own column caption, not the whole exhibit
+      const cap = frame.closest('.exhibit-col').querySelector('.label');
+      $('lbTitle').textContent = cap ? cap.textContent : '';
       lightbox.hidden = false;
-      setPos(50);
     });
   });
 
-  const fromEvent = e => {
-    const r = compare.getBoundingClientRect();
-    const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
-    setPos(x / r.width * 100);
-  };
-  compare.addEventListener('mousedown', e => { dragging = true; fromEvent(e); });
-  addEventListener('mousemove', e => { if(dragging) fromEvent(e); });
-  addEventListener('mouseup',  () => { dragging = false; });
-  compare.addEventListener('touchstart', fromEvent, {passive:true});
-  compare.addEventListener('touchmove',  fromEvent, {passive:true});
-
-  addEventListener('keydown', e => {
-    if(lightbox.hidden) return;
-    if(e.key === 'ArrowLeft'){  e.preventDefault(); setPos(pos - 3); }
-    if(e.key === 'ArrowRight'){ e.preventDefault(); setPos(pos + 3); }
-  });
-
   window.closeLightbox = () => { lightbox.hidden = true; };
+
+  // the stage is the backdrop; the image sits on top and swallows its own click
+  $('lbStage').addEventListener('click', e => {
+    if(e.target !== img) window.closeLightbox();
+  });
   $('lbClose').onclick = window.closeLightbox;
 })();
 
@@ -1926,11 +1872,22 @@ $('closeHelp').onclick = ()=>helpModal.classList.remove('open');
 
   const MAX  = 2.5;                                  // degrees at the far edge
   const REST = 'perspective(1000px)';
+
+  // Every discrete block in the deck, not just the panel-shaped ones.
   const CARD = ['.panel','.exhibit-frame','.ov-card','.seq-step',
                 '.figs > div','.figs-2 > div','.metric','.deltas > div',
-                '.statement-figs > div'].join(',');
+                '.statement-figs > div','.rows > div','.calc > div',
+                '.roster > div','.findings > div','.alloc > div',
+                '.contact > div',
+                // the table tilts as one unit: the Pulse Grid column is a
+                // single continuous surface, and a per-row transform tears it
+                '.dtable'].join(',');
 
   document.querySelectorAll(CARD).forEach(card => {
+    // querySelectorAll returns document order, so any tilting ancestor has
+    // already been tagged. Nesting a tilt inside a tilt compounds the two
+    // transforms and the inner block visibly detaches from its parent.
+    if(card.parentElement && card.parentElement.closest('.tilt')) return;
     card.classList.add('tilt');
 
     card.addEventListener('mouseenter', () => card.classList.add('is-tilting'));
